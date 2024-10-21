@@ -137,68 +137,145 @@ const technologies = [
 
 const experiences = [
     {
-        title: "LinkScribe | A.I. & Web Dev",
-        company_name: "Docker, Vagrant, Kaggle, Edge Impulse, ML Flow, API Rest, JS, Python, React, CSS, HTML, MUI",
+        title: "1. Creación de la Idea",
+        company_name: "Generación de conceptos innovadores",
         icon: github,
         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
         iconLink: "https://github.com/xlgabriel/linkscribe",
-        date: "August 2023 - December 2023",
+        date: "Fecha: Durante el semestre",
         points: [
-            "Effortlessly create, organize, and categorize web links using NLP (Natural Language Processing). Copy and paste links to extract content information, categorize, and search with custom keywords.",
-            "Model trained from scratch and used in the backend, connected by API.",
+            "Se generó la idea inicial de un juego de supervivencia en una isla tras un accidente de avión, donde el jugador debe sobrevivir hasta ser rescatado o encontrar una salida.",
+            "Se definieron los desafíos que enfrentarían los jugadores en la isla, como la búsqueda de recursos para sobrevivir y la exploración del entorno.",
         ],
     },
     {
-        title: "AcademIA | Scrum Master",
-        company_name:
-            "Scrum, Jira, Miro, Taiga, Slack, Notion, KPIs, User Stories, Metrics, Daily Scrum, Sprints, soft skills",
+        title: "2. Sketching",
+        company_name: "Bocetos iniciales",
         icon: github,
         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
         iconLink: "https://github.com/xlgabriel/academia",
-        date: "February 2023 - June 2023",
+        date: "Fecha: Durante el semestre",
         points: [
-            "LMS-type open-source collaborative project where the user (teacher, student) can access their academic courses, upload and review multimedia content.",
-            "It also has Hangouts-style chat, with a plus of AItype virtual assistant integrated inside the system.",
+            "Se crearon bocetos para visualizar las mecánicas del juego en la isla, incluyendo la recolección de recursos y la construcción de refugios.",
+            "Se exploraron diferentes diseños para las interfaces del jugador y los elementos de supervivencia.",
         ],
     },
     {
-        title: "Lecturando | A.I. & Game Dev",
-        company_name: "Unity, GitHub, GitLab, Miro, Scrum, Doc & Testing, Tesseract OCR, ONNX, Barracuda, Firebase, C#",
+        title: "3. Storyboarding",
+        company_name: "Ilustración de interacciones",
         icon: github,
         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
         iconLink: "https://gitlab.com/media-collab/dm2_lecturando",
-        date: "February 2022 - December 2022",
+        date: "Fecha: Durante el semestre",
         points: [
-            "Unity game focused on solving the letter inversion problem (p,q,b,d) detected in kids from schools from Cali, Colombia.",
-            "Using image recognition and database in this gamification-based videogame, we offered solutions for teachers to help solving this problem.",
+            "Se desarrollaron storyboards que narraban la historia del superviviente en la isla y sus interacciones clave para sobrevivir.",
+            "Se definieron los escenarios de juego y los flujos de decisiones que los jugadores podrían tomar para buscar ayuda.",
         ],
     },
     {
-        title: "GoPance | Front-end Dev",
-        company_name: "React, HTML, CSS, JavaScript, Bootstrap, Canva, Netlify, Firebase, Node.js, Postman.",
+        title: "4. Prototipado / Maqueta y Evaluación con Usuarios",
+        company_name: "Desarrollo de prototipos",
         icon: github,
         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
         iconLink: "https://github.com/Johannes910/gopance",
-        date: "August 2022 - December 2022",
+        date: "Fecha: Durante el semestre",
         points: [
-            "Web application similar to Rappi or Uber Eats, focused on Pance town in Cali, Colombia.",
-            "The purpose is to connect the different business and services located here with people around the city to impulse its economy and development.",
+            "Se desarrolló un prototipo jugable y se realizó una evaluación con usuarios que ayudó a recoger retroalimentación sobre la experiencia de supervivencia.",
+            "Los usuarios probaron las mecánicas del juego y dieron opiniones sobre la narrativa y el contexto de la historia en la isla.",
         ],
     },
     {
-        title: "Minecraft Speech to Text",
-        company_name: "Python, CNN, Colab, Jupyter Notebook, ursina, h5py, keras, Speech recognizer, TensorFlow.",
+        title: "5. Primer Prototipo + Evaluación con Usuarios",
+        company_name: "Iteración sobre el prototipo",
         icon: github,
         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
         iconLink: "https://videface.app",
-        date: "August 2022 - December 2022",
+        date: "Fecha: Durante el semestre",
         points: [
-            "Python-based Minecraft with words recognizer (Convolutional Neural Network), with our own dataset and training.",
-            "By saying one of the five words, it changes the block to use within the game.",
-            "Great project to learn about speech recognition and A.I. from training to implementation.",
+            "El primer prototipo se centró en la supervivencia en la isla, pero la retroalimentación de los usuarios reveló que necesitaban una razón clara para estar ahí.",
+            "Esto llevó a modificar la idea hacia la historia de un astronauta en un planeta desconocido, con el objetivo de reparar su nave para poder irse.",
+        ],
+    },
+    {
+        title: "6. Segundo Prototipo + Evaluación con Usuarios",
+        company_name: "Refinamiento del diseño",
+        icon: github,
+        iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
+        iconLink: "https://videface.app",
+        date: "Fecha: Durante el semestre",
+        points: [
+            "Se desarrolló un segundo prototipo basado en la nueva narrativa del astronauta, enfatizando la necesidad de reparar la nave para escapar.",
+            "Se evaluó nuevamente con usuarios para asegurar que las mecánicas de juego y la historia fueran comprensibles y atractivas, refinando así el diseño hasta la versión final.",
         ],
     },
 ];
+
+
+
+// const experiences = [
+//     {
+//         title: "LinkScribe | A.I. & Web Dev",
+//         company_name: "Docker, Vagrant, Kaggle, Edge Impulse, ML Flow, API Rest, JS, Python, React, CSS, HTML, MUI",
+//         icon: github,
+//         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
+//         iconLink: "https://github.com/xlgabriel/linkscribe",
+//         date: "August 2023 - December 2023",
+//         points: [
+//             "Effortlessly create, organize, and categorize web links using NLP (Natural Language Processing). Copy and paste links to extract content information, categorize, and search with custom keywords.",
+//             "Model trained from scratch and used in the backend, connected by API.",
+//         ],
+//     },
+//     {
+//         title: "AcademIA | Scrum Master",
+//         company_name:
+//             "Scrum, Jira, Miro, Taiga, Slack, Notion, KPIs, User Stories, Metrics, Daily Scrum, Sprints, soft skills",
+//         icon: github,
+//         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
+//         iconLink: "https://github.com/xlgabriel/academia",
+//         date: "February 2023 - June 2023",
+//         points: [
+//             "LMS-type open-source collaborative project where the user (teacher, student) can access their academic courses, upload and review multimedia content.",
+//             "It also has Hangouts-style chat, with a plus of AItype virtual assistant integrated inside the system.",
+//         ],
+//     },
+//     {
+//         title: "Lecturando | A.I. & Game Dev",
+//         company_name: "Unity, GitHub, GitLab, Miro, Scrum, Doc & Testing, Tesseract OCR, ONNX, Barracuda, Firebase, C#",
+//         icon: github,
+//         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
+//         iconLink: "https://gitlab.com/media-collab/dm2_lecturando",
+//         date: "February 2022 - December 2022",
+//         points: [
+//             "Unity game focused on solving the letter inversion problem (p,q,b,d) detected in kids from schools from Cali, Colombia.",
+//             "Using image recognition and database in this gamification-based videogame, we offered solutions for teachers to help solving this problem.",
+//         ],
+//     },
+//     {
+//         title: "GoPance | Front-end Dev",
+//         company_name: "React, HTML, CSS, JavaScript, Bootstrap, Canva, Netlify, Firebase, Node.js, Postman.",
+//         icon: github,
+//         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
+//         iconLink: "https://github.com/Johannes910/gopance",
+//         date: "August 2022 - December 2022",
+//         points: [
+//             "Web application similar to Rappi or Uber Eats, focused on Pance town in Cali, Colombia.",
+//             "The purpose is to connect the different business and services located here with people around the city to impulse its economy and development.",
+//         ],
+//     },
+//     {
+//         title: "Minecraft Speech to Text",
+//         company_name: "Python, CNN, Colab, Jupyter Notebook, ursina, h5py, keras, Speech recognizer, TensorFlow.",
+//         icon: github,
+//         iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
+//         iconLink: "https://videface.app",
+//         date: "August 2022 - December 2022",
+//         points: [
+//             "Python-based Minecraft with words recognizer (Convolutional Neural Network), with our own dataset and training.",
+//             "By saying one of the five words, it changes the block to use within the game.",
+//             "Great project to learn about speech recognition and A.I. from training to implementation.",
+//         ],
+//     },
+// ];
 
 const testimonials = [
     {

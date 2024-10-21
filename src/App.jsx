@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Works from "./components/Works";
-
+import Experience from "./components/Experience";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         </div>
         <About />
         <Works />
-        {/* <Experience /> */}
+        <Experience />
         {/* <Tech /> */}
         {/* <Feedbacks /> */}
         {/* <div className="relative z-0">

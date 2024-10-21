@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Works from "./components/Works";
-
+import Experience from "./components/Experience";
+import WrappedSlides from "./components/Carousel";
 
 const App = () => {
   return (
@@ -14,8 +15,9 @@ const App = () => {
           <Hero />
         </div>
         <About />
-        {/* <Works /> */}
-        {/* <Experience /> */}
+        <Works />
+        <Experience />
+        <WrappedSlides />
         {/* <Tech /> */}
         {/* <Feedbacks /> */}
         {/* <div className="relative z-0">

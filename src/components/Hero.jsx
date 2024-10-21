@@ -30,7 +30,7 @@ const Hero = () => {
                     </p>
                     <div className="flex sm:flex-row mt-7">
                         <a
-                            href="https://github.com/xlgabriel"
+                            href="https://github.com/i-am-sergio/human-computer-interaction"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mb-4 sm:mb-0 sm:mr-4 green-pink-gradient p-[2px] rounded-[10px] shadow-card"
@@ -39,7 +39,7 @@ const Hero = () => {
                                 GitHub
                             </button>
                         </a>
-                        <a
+                        {/* <a
                             href="https://www.linkedin.com/in/xlgabriel"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -48,7 +48,7 @@ const Hero = () => {
                             <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95">
                                 LinkedIn
                             </button>
-                        </a>
+                        </a> */}
                         <a
                             href="https://drive.google.com/file/d/1wNSo6dtOsfWeCJu854kqBztZDKI_ZjBZ/view?usp=sharing"
                             target="_blank"
@@ -56,7 +56,7 @@ const Hero = () => {
                             className="mb-4 sm:mb-0 sm:mr-4 green-pink-gradient p-[2px] rounded-[10px] shadow-card"
                         >
                             <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95">
-                                <strong>CV</strong>
+                                <strong>Propuesta de Proyecto</strong>
                             </button>
                         </a>
                     </div>

@@ -77,7 +77,7 @@ const About = () => {
         usabilidad y accesibilidad.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap justify-center gap-16 max-w-screen-lg mx-auto">
         {teamMembers.map((member, index) => (
           <ServiceCard key={member.title} index={index} {...member} />
         ))}

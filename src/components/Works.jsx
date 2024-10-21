@@ -57,7 +57,7 @@ const ProjectCard = ({ index, upper_title, date, name, description, tags, image,
                     scale: 1,
                     speed: 450,
                 }}
-                className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+                className="bg-tertiary p-6 rounded-2xl sm:w-[560px] w-full"
             >
                 {" "}
                 <div className="relative w-full h-[230px]">
@@ -124,9 +124,9 @@ const ProjectCard = ({ index, upper_title, date, name, description, tags, image,
 const Works = () => {
     return (
         <>
-            <motion.div variants={textVariant()}>
-                <p className={`${styles.sectionSubText} `}>+4 years as an engineer</p>
-                <h2 className={`${styles.sectionHeadText}`}>Professional experience.</h2>
+            <motion.div variants={textVariant()} id="proyectos">
+                <p className={`${styles.sectionSubText} `}>Diseños Centrados en el Usuario</p>
+                <h2 className={`${styles.sectionHeadText}`}>Proyectos.</h2>
             </motion.div>
 
             <div className="w-full flex">
@@ -134,9 +134,8 @@ const Works = () => {
                     variants={fadeIn("", "", 0.1, 1)}
                     className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
                 >
-                    I've worked as a Full-Stack Engineer, in charge of a team in my own company (VideFace). I've also
-                    worked on infrastructure, DevOps, Scrum Master, Cloud Engineering, Game Development and more. What
-                    will be the next challenge?
+                    En esta sección, presentamos los proyectos que hemos desarrollado durante el semestre, centrados en la interacción humano-computadora y el diseño centrado en el usuario. Estos proyectos reflejan nuestra creatividad y habilidad técnica mientras abordamos desafíos únicos en el ámbito de la realidad virtual y aumentada.
+
                 </motion.p>
             </div>
 

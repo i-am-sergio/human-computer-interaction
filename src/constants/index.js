@@ -241,42 +241,30 @@ const testimonials = [
 
 const projects = [
     {
-        upper_title: "Fast-growing SaaS with real clients",
-        date: "July 2023 - Present",
-        name: "VideFace",
+        upper_title: "Juego de Supervivencia en un mundo de islas (Realidad Virtual)",
+        date: "Sep 2024 - Oct 2024",
+        name: "IsLand",
         description:
-            "Transforms remote sales and customer service. Creation of a web app from scratch ready for commercial use. Build and maintain a scalable, multi-tenant and monetizing product. In charge of the other developers as a CTO and Scrum Master. Supervising the new features, code refactor, infrastructure improvements and more.",
+            "Este semestre, nuestro equipo creó un juego en realidad virtual donde el jugador asume el rol de un astronauta que, tras un accidente, aterriza en un planeta desconocido. En este entorno hostil, debe sobrevivir recolectando recursos y herramientas para reparar su nave antes de quedarse sin oxígeno y alimento. La experiencia enfatiza la exploración y la resolución de problemas, enseñándonos la importancia del diseño de interfaces y la interacción en entornos virtuales.",
         tags: [
             {
-                name: "react",
-                color: "blue-text-gradient",
+                name: "RealidadVirtual",
+                color: "text-blue-400",
             },
             {
-                name: "firebase",
-                color: "pink-text-gradient",
-            },
-            {
-                name: "javascript",
-                color: "text-yellow-500",
-            },
-            {
-                name: "socket.io",
+                name: "Unity",
                 color: "text-gray-300",
             },
             {
-                name: "webrtc",
+                name: "Diseño",
+                color: "text-yellow-500",
+            },
+            {
+                name: "MetaQuest2",
                 color: "text-green-300",
             },
             {
-                name: "cloud run",
-                color: "orange-text-gradient",
-            },
-            {
-                name: "node.js",
-                color: "text-green-500",
-            },
-            {
-                name: "cloudflare",
+                name: "PrincipiosDeGestalt",
                 color: "text-orange-500",
             },
         ],
@@ -284,71 +272,68 @@ const projects = [
         source_code_link: "https://videface.app",
     },
     {
-        upper_title: "Giving real value to the company",
-        date: "March 2023 - May 2024",
-        name: "Rent a car 4 less",
+        upper_title: "Aplicacion para el aprendizaje del Inglés (Realidad Augmentada)",
+        date: "Oct 2024 - Present",
+        name: "ARLang",
         description:
-            "Development of web-based software to automatize car rental process in the offices. Automate internal processes related to the management of sensitive information. Development of new features on the WordPress page. In charge of social networks management, content creation, user experience and more.",
+            "Actualmente, estamos trabajando en un innovador proyecto de realidad aumentada diseñado para mejorar el aprendizaje del inglés. Este enfoque combina la tecnología de realidad aumentada con métodos educativos interactivos, creando una experiencia de aprendizaje inmersiva y atractiva. A través de actividades interactivas y escenarios prácticos, buscamos motivar a los estudiantes a adquirir habilidades lingüísticas de manera divertida y efectiva.",
         tags: [
             {
-                name: "wordpress",
-                color: "blue-text-gradient",
+                name: "Augmented Reality",
+                color: "text-green-500",
             },
             {
-                name: "nodemailer",
-                color: "green-text-gradient",
+                name: "Unity",
+                color: "text-green-200",
             },
             {
-                name: "node.js",
-                color: "pink-text-gradient",
+                name: "InteractiveLearning",
+                color: "text-gray-300",
             },
             {
-                name: "google cloud",
+                name: "Android",
                 color: "text-yellow-500",
             },
             {
-                name: "react",
+                name: "PrincipiosDeGestalt",
                 color: "text-orange-500",
             },
-            {
-                name: "material-ui",
-                color: "text-gray-300",
-            },
+            
         ],
         image: rentacar4less,
         source_code_link: "https://www.rac4less.com/",
     },
-    {
-        upper_title: "Getting to know the professional world",
-        date: "June 2020 - December 2023",
-        name: "BOGA and Electronet",
-        description:
-            "BOGA and Siluetas Spa: in charge of editing content focused on text and audiovisual elements on a continuous basis for the social networks. Multimedia experiences developer. Electronet: in charge of the creation of the intro to the edition of the Opener and promotion of electronic events, all with high quality audiovisual detail. ",
-        tags: [
-            {
-                name: "premiere pro",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "canva",
-                color: "green-text-gradient",
-            },
-            {
-                name: "pro tools",
-                color: "pink-text-gradient",
-            },
-            {
-                name: "after effects",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "adobe media encoder",
-                color: "text-yellow-400",
-            },
-        ],
-        image: boga,
-        source_code_link: "https://instagram.com/boga.peluqueria",
-    },
+    // {
+    //     upper_title: "Getting to know the professional world",
+    //     date: "June 2020 - December 2023",
+    //     name: "BOGA and Electronet",
+    //     description:
+    //         "BOGA and Siluetas Spa: in charge of editing content focused on text and audiovisual elements on a continuous basis for the social networks. Multimedia experiences developer. Electronet: in charge of the creation of the intro to the edition of the Opener and promotion of electronic events, all with high quality audiovisual detail. ",
+    //     tags: [
+    //         {
+    //             name: "premiere pro",
+    //             color: "blue-text-gradient",
+    //         },
+    //         {
+    //             name: "canva",
+    //             color: "green-text-gradient",
+    //         },
+    //         {
+    //             name: "pro tools",
+    //             color: "pink-text-gradient",
+    //         },
+    //         {
+    //             name: "after effects",
+    //             color: "blue-text-gradient",
+    //         },
+    //         {
+    //             name: "adobe media encoder",
+    //             color: "text-yellow-400",
+    //         },
+    //     ],
+    //     image: boga,
+    //     source_code_link: "https://instagram.com/boga.peluqueria",
+    // },
 ];
 
 export { services, technologies, experiences, testimonials, projects };

@@ -8,6 +8,7 @@ import {
   reactjs,
   threejs,
   github,
+  youtube,
   video,
   c,
   aframe,
@@ -27,15 +28,22 @@ import cristianAvalo from "../assets/cristianavalo.webp";
 import carlosOsorio from "../assets/carlososorio.webp";
 import valentinaLoaiza from "../assets/valentinaloaiza.webp";
 
+import ideas from "../assets/1ideas.jpg";
+import sketching from "../assets/1sketching.jpg";
+import storyboarding from "../assets/2storyboard.jpg";
+import maqueta from "../assets/3maqueta.jpg";
+import prototipo5 from "../assets/5prototipo.png";
+import prototipo6 from "../assets/6prototipo.png";
+
 export const navLinks = [
   {
     id: "#about",
     title: "Nosotros",
   },
-  {
-    id: "#metodologia",
-    title: "Metodologia",
-  },
+  // {
+  //   id: "#metodologia",
+  //   title: "Metodologia",
+  // },
   {
     id: "#proyectos",
     title: "Proyectos",
@@ -139,74 +147,80 @@ const experiences = [
   {
     title: "1. Creación de la Idea",
     company_name: "Generación de conceptos innovadores",
-    icon: github,
+    icon: youtube,
     iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
-    iconLink: "https://github.com/xlgabriel/linkscribe",
+    iconLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     date: "Fecha: Durante el semestre",
     points: [
       "Se generó la idea inicial de un juego de supervivencia en una isla tras un accidente de avión, donde el jugador debe sobrevivir hasta ser rescatado o encontrar una salida.",
       "Se definieron los desafíos que enfrentarían los jugadores en la isla, como la búsqueda de recursos para sobrevivir y la exploración del entorno.",
     ],
+    image: ideas,
   },
   {
     title: "2. Sketching",
     company_name: "Bocetos iniciales",
-    icon: github,
+    icon: youtube,
     iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
-    iconLink: "https://github.com/xlgabriel/academia",
+    iconLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     date: "Fecha: Durante el semestre",
     points: [
       "Se crearon bocetos para visualizar las mecánicas del juego en la isla, incluyendo la recolección de recursos y la construcción de refugios.",
       "Se exploraron diferentes diseños para las interfaces del jugador y los elementos de supervivencia.",
     ],
+    image: sketching,
   },
   {
     title: "3. Storyboarding",
     company_name: "Ilustración de interacciones",
-    icon: github,
+    icon: youtube,
     iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
-    iconLink: "https://gitlab.com/media-collab/dm2_lecturando",
+    iconLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     date: "Fecha: Durante el semestre",
     points: [
       "Se desarrollaron storyboards que narraban la historia del superviviente en la isla y sus interacciones clave para sobrevivir.",
       "Se definieron los escenarios de juego y los flujos de decisiones que los jugadores podrían tomar para buscar ayuda.",
     ],
+    image: storyboarding,
   },
   {
     title: "4. Prototipado / Maqueta y Evaluación con Usuarios",
     company_name: "Desarrollo de prototipos",
-    icon: github,
+    icon: youtube,
     iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
-    iconLink: "https://github.com/Johannes910/gopance",
+    iconLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     date: "Fecha: Durante el semestre",
     points: [
       "Se desarrolló un prototipo jugable y se realizó una evaluación con usuarios que ayudó a recoger retroalimentación sobre la experiencia de supervivencia.",
       "Los usuarios probaron las mecánicas del juego y dieron opiniones sobre la narrativa y el contexto de la historia en la isla.",
     ],
+    image: maqueta,
   },
   {
     title: "5. Primer Prototipo + Evaluación con Usuarios",
     company_name: "Iteración sobre el prototipo",
-    icon: github,
+    icon: youtube,
     iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
-    iconLink: "https://videface.app",
+    iconLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     date: "Fecha: Durante el semestre",
     points: [
       "El primer prototipo se centró en la supervivencia en la isla, pero la retroalimentación de los usuarios reveló que necesitaban una razón clara para estar ahí.",
       "Esto llevó a modificar la idea hacia la historia de un astronauta en un planeta desconocido, con el objetivo de reparar su nave para poder irse.",
     ],
+    image: prototipo5,
   },
   {
     title: "6. Segundo Prototipo + Evaluación con Usuarios",
     company_name: "Refinamiento del diseño",
-    icon: github,
+    icon: youtube,
     iconBg: "radial-gradient(circle at center, #383076, #4a37de)",
-    iconLink: "https://videface.app",
+    iconLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     date: "Fecha: Durante el semestre",
     points: [
       "Se desarrolló un segundo prototipo basado en la nueva narrativa del astronauta, enfatizando la necesidad de reparar la nave para escapar.",
       "Se evaluó nuevamente con usuarios para asegurar que las mecánicas de juego y la historia fueran comprensibles y atractivas, refinando así el diseño hasta la versión final.",
     ],
+    image: prototipo6,
   },
 ];
 

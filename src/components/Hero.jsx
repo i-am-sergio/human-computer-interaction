@@ -35,8 +35,8 @@ const Hero = () => {
                             rel="noopener noreferrer"
                             className="mb-4 sm:mb-0 sm:mr-4 green-pink-gradient p-[2px] rounded-[10px] shadow-card"
                         >
-                            <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95">
-                                GitHub
+                            <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95 hover:bg-[#42349a]">
+                                <strong>GitHub</strong>
                             </button>
                         </a>
                         {/* <a
@@ -55,7 +55,7 @@ const Hero = () => {
                             rel="noopener noreferrer"
                             className="mb-4 sm:mb-0 sm:mr-4 green-pink-gradient p-[2px] rounded-[10px] shadow-card"
                         >
-                            <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95">
+                            <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95 hover:bg-[#42349a]">
                                 <strong>Propuesta de Proyecto</strong>
                             </button>
                         </a>

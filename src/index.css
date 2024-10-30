@@ -3,6 +3,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Configura la animación de los cuadrados */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.5); /* Comienza más abajo del viewport */
+    opacity: 0; /* Inicialmente oculto */
+  }
+  40% {
+    opacity: 1; /* Aparece en el 40% de la animación */
+  }
+  100% {
+    transform: translateY(-10vh) scale(1); /* Termina por encima del viewport */
+    opacity: 0; /* Desaparece al final de la animación */
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 20px; /* Tamaño de los círculos */
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%; /* Convierte el cuadrado en un círculo */
+  animation: floatUp 6s ease-in infinite; /* Mantén la animación continua */
+  /* Inicialmente ocultar */
+  opacity: 0; /* Los círculos estarán ocultos hasta que empiecen a animarse */
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

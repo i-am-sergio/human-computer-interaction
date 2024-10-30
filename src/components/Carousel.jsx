@@ -80,7 +80,7 @@ const Slides = () => {
         <div className="swiper-pagination" />
       </div>
 
-      <style jsx>{`
+      <style>{`
         .swiper-slide-shadow-left,
         .swiper-slide-shadow-right {
           display: none !important;

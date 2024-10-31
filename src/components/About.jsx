@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 import imgSergio from "../assets/1.jpeg";
 import imgBraulio from "../assets/2.jpeg";
-import imgNelzon from "../assets/3.jpeg";
+import imgNelzon from "../assets/Nelzon.jpg";
 
 // Array de miembros del equipo con las imágenes importadas
 const teamMembers = [

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";

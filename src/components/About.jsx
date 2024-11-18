@@ -14,17 +14,17 @@ import imgNelzon from "../assets/Nelzon.jpg";
 const teamMembers = [
   {
     title: "Sergio Daniel Mogollon Cáceres",
-    role: "Investigador en Ciencia de la Computación",
+    role: "Estudiante de Ciencia de la Computación",
     icon: imgSergio, // Imagen de Sergio
   },
   {
     title: "Braulio Nayap Maldonado Casilla",
-    role: "Desarrollador de Software y Experto en IHC",
+    role: "Estudiante de Ciencia de la Computación",
     icon: imgBraulio, // Imagen de Braulio
   },
   {
-    title: "Nelzon Jorge Apaza Apaza",
-    role: "Estudiante en Ciencia de la Computación y Diseñador UX",
+    title: "Nelzon Jorge Apaza     Apaza",
+    role: "Estudiante en Ciencia de la Computación",
     icon: imgNelzon, // Imagen de Nelzon
   },
 ];
@@ -68,10 +68,10 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[17px] max-w-3xl mx-auto  "
       >
-        Somos un equipo de estudiantes de Ciencias de la Computación apasionados
-        por la Interacción Humano-Computador (IHC). A lo largo de este curso,
+        Somos estudiantes de Ciencia de la Computación apasionados
+        por la Interacción Humano Computador (IHC). A lo largo de este curso,
         hemos desarrollado proyectos que exploran cómo las personas interactúan
         con la tecnología, enfocándonos en mejorar la experiencia de usuario,
         usabilidad y accesibilidad.

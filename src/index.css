@@ -26,7 +26,6 @@
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%; /* Convierte el cuadrado en un círculo */
   animation: floatUp 6s ease-in infinite; /* Mantén la animación continua */
-  /* Inicialmente ocultar */
   opacity: 0; /* Los círculos estarán ocultos hasta que empiecen a animarse */
 }
 

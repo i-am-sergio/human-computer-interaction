@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PDFViewer from "./PDFViewer";
 import { motion } from "framer-motion";
 import Window from './Window';  // Asegúrate de importar el componente Window
+import Experience from './Experience';
 
 const samplePDF = '/human-computer-interaction/Proyecto_IHC_Etapa1.pdf';
 
@@ -20,6 +21,8 @@ const Videojuego = () => {
 
   return (
     <div>
+      <Experience />
+
       {/* Botón para abrir la ventana */}
       <motion.button
         whileHover={{ scale: 1.1 }}

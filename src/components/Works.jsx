@@ -8,16 +8,20 @@ import { EtapasProject } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import PDFViewer from "./PDFViewer";
 import YouTubeViewer from "./YouTubeViewer";
-
+import { IoMdDocument } from "react-icons/io";
+import { AiFillFilePpt } from "react-icons/ai";
+import { FaPlay, FaUser } from "react-icons/fa";
 const NeedFindingCard = ({
   logo,
   title,
   desc,
   linkVideo,
+  linkVideo2,
   date,
   image,
   onOpenWindow, // Añadimos la función para abrir la ventana desde el padre
   filePDF, // Recibimos el archivo PDF como prop
+  filePDF2,
 }) => {
   return (
     <Tilt
@@ -53,19 +57,42 @@ const NeedFindingCard = ({
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => onOpenWindow(filePDF, title, date, "pdf")}
-              className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300"
+              className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center gap-2 transition duration-300"
             >
-              Documento
+              <IoMdDocument /> Documento
             </motion.button>
+
+            {filePDF2 && (
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => onOpenWindow(filePDF2, title, date, "pdf")}
+                className="bg-purple-600 hover:bg-purple-500 text-white py-2 px-4 rounded-lg flex items-center gap-2 transition duration-300"
+              >
+                <AiFillFilePpt /> PPT
+              </motion.button>
+            )}
             {/* Button to open Video */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => onOpenWindow(linkVideo, title, date, "video")}
-              className="bg-orange-400 hover:bg-orange-300 text-white py-2 px-4 rounded-lg transition duration-300"
-            >
-              Video
-            </motion.button>
+            {linkVideo && (
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => onOpenWindow(linkVideo, title, date, "video")}
+                className="bg-orange-400 hover:bg-orange-300 text-white py-2 px-4 rounded-lg flex items-center gap-2 transition duration-300"
+              >
+                <FaPlay /> Video
+              </motion.button>
+            )}
+            {linkVideo2 && (
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => onOpenWindow(linkVideo2, title, date, "video")}
+                className="bg-green-500 hover:bg-green-400 text-white py-2 px-4 rounded-lg flex items-center gap-2 transition duration-300"
+              >
+                <FaUser /> Evaluación
+              </motion.button>
+            )}
           </div>
         </div>
 
@@ -129,13 +156,14 @@ const Works = () => {
         <div
           style={{
             width: "100%",
-            height: "calc(100vh - 100px)", // Modificado para usar el mismo alto que el PDFViewer
+            height: "calc(100vh - 100px)", // Ajuste de altura
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          {/* Ajuste del grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {EtapasProject.map((project) => (
               <NeedFindingCard
                 key={project.id}
@@ -143,10 +171,12 @@ const Works = () => {
                 title={project.title}
                 desc={project.desc}
                 linkVideo={project.linkVideo}
+                linkVideo2={project.linkVideo2}
                 date={project.date}
                 image={project.image}
                 onOpenWindow={handleOpenWindow} // Pasamos la función para abrir la ventana
                 filePDF={project.linkPDF} // Pasamos la URL del PDF
+                filePDF2={project.linkPDF2}
               />
             ))}
           </div>

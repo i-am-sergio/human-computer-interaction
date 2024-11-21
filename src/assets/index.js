@@ -43,7 +43,12 @@ import playVideo from "./play.svg";
 import rocket from "./rocket.svg";
 import person from "./person.svg";
 import book from "./book.svg";
+
+import storyboarding2 from "./storyboarding.jpg";
+import needfinding from "./needfinding.jpg";
 export {
+  storyboarding2,
+  needfinding,
   book,
   person,
   rocket,

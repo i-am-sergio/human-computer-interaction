@@ -1,7 +1,10 @@
-import React from "react";
+import { useState } from "react";
 import { IoMdDocument } from "react-icons/io";
 import { FaPlay } from "react-icons/fa";
-import { motion } from "framer-motion"; // Importamos framer-motion
+import { motion } from "framer-motion";
+
+import PDFViewer from "./PDFViewer";
+import YouTubeViewer from "./YouTubeViewer";
 
 import ideas from "../assets/1ideas.jpg";
 import sketching from "../assets/1sketching.jpg";
@@ -9,68 +12,96 @@ import storyboarding from "../assets/2storyboard.jpg";
 import maqueta from "../assets/3maqueta.jpg";
 import prototipo5 from "../assets/5prototipo.png";
 import prototipo6 from "../assets/6prototipo.png";
+import Window from "./Window";
 
+// Datos de las secciones
 const sections = [
   {
     id: "creacion-idea",
     title: "Creación de la Idea",
     imgSrc: ideas,
-    description: "Se generó la idea inicial de un juego de supervivencia en una isla tras un accidente de avión, donde el jugador debe sobrevivir hasta ser rescatado o encontrar una salida. Se definieron los desafíos que enfrentarían los jugadores en la isla, como la búsqueda de recursos para sobrevivir y la exploración del entorno."
+    description: "Se generó la idea inicial de un juego de supervivencia en una isla tras un accidente de avión, donde el jugador debe sobrevivir hasta ser rescatado o encontrar una salida. Se definieron los desafíos que enfrentarían los jugadores en la isla, como la búsqueda de recursos para sobrevivir y la exploración del entorno.",
+    pdfLink: "/assets/creacion-idea.pdf",
+    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
   {
     id: "sketching",
     title: "Sketching",
     imgSrc: sketching,
-    description: `El sketching es una de las etapas más divertidas y creativas del diseño. Aquí, las ideas de la fase anterior se plasman en papel de manera rápida y libre,
-    sin preocuparse demasiado por los detalles. Los bocetos sirven como una herramienta visual para explorar y definir más claramente las ideas.`,
+    description: "Se crearon bocetos para visualizar las mecánicas del juego en la isla, incluyendo la recolección de recursos y la construcción de refugios. Se exploraron diferentes diseños para las interfaces del jugador y los elementos de supervivencia.",
+    pdfLink: "/assets/sketching.pdf",
+    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
   {
     id: "storyboarding",
     title: "Storyboarding",
     imgSrc: storyboarding,
-    description: `El storyboarding es una técnica utilizada para planificar visualmente cómo funcionará el producto. A través de un conjunto de imágenes secuenciales,
-    se puede mostrar la interacción del usuario con el diseño en diferentes escenarios, y cómo el flujo de tareas se desarrolla de principio a fin.`,
+    description: "Se desarrollaron storyboards que narraban la historia del superviviente en la isla y sus interacciones clave para sobrevivir. Se definieron los escenarios de juego y los flujos de decisiones que los jugadores podrían tomar para buscar ayuda.",
+    pdfLink: "/assets/storyboarding.pdf",
+    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
   {
     id: "prototipo-papel",
     title: "Prototipo de Papel",
     imgSrc: maqueta,
-    description: `El prototipo de papel es una representación física de la interfaz del producto que se utiliza para obtener una retroalimentación temprana de los usuarios sin necesidad de programar o construir un prototipo digital.`,
+    description: "Se desarrolló un prototipo jugable y se realizó una evaluación con usuarios que ayudó a recoger retroalimentación sobre la experiencia de supervivencia. Los usuarios probaron las mecánicas del juego y dieron opiniones sobre la narrativa y el contexto de la historia en la isla.",
+  
+    pdfLink: "/assets/prototipo-papel.pdf",
+    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
   {
     id: "primer-prototipo",
     title: "Primer Prototipo",
     imgSrc: prototipo5,
-    description: `El primer prototipo es la versión inicial digital del producto. En esta fase, el diseño ya se ha formalizado y el prototipo sirve para explorar cómo interactúa el usuario con la interfaz en un entorno digital real.`,
+    description: "El primer prototipo se centró en la supervivencia en la isla, pero la retroalimentación de los usuarios reveló que necesitaban una razón clara para estar ahí. Esto llevó a modificar la idea hacia la historia de un astronauta en un planeta desconocido, con el objetivo de reparar su nave para poder irse.",
+    pdfLink: "/assets/primer-prototipo.pdf",
+    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
   {
     id: "segundo-prototipo",
     title: "Segundo Prototipo",
     imgSrc: prototipo6,
-    description: `El segundo prototipo es una versión mejorada y más pulida del primer prototipo. En esta fase, se incorporan mejoras basadas en la retroalimentación obtenida del primer prototipo.`,
+    description: "Se desarrolló un segundo prototipo basado en la nueva narrativa del astronauta, enfatizando la necesidad de reparar la nave para escapar. Se evaluó nuevamente con usuarios para asegurar que las mecánicas de juego y la historia fueran comprensibles y atractivas, refinando así el diseño hasta la versión final.",
+    pdfLink: "/assets/segundo-prototipo.pdf",
+    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
 ];
 
+
 export default function Content() {
+  const [isWindowOpen, setIsWindowOpen] = useState(false);
+  const [fileContent, setFileContent] = useState(null);
+  const [contentType, setContentType] = useState("");
+
+  // Función para abrir la ventana
+  const handleOpenWindow = (file, type) => {
+    setFileContent(file);
+    setContentType(type);
+    setIsWindowOpen(true);
+  };
+
+  // Función para cerrar la ventana
+  const handleCloseWindow = () => {
+    setIsWindowOpen(false);
+  };
+
   return (
-    <div className="content-container p-8 flex-1 bg-white">
+    <div className="content-container px-8 flex-1 bg-orange-400">
       {sections.map((section) => (
         <motion.div
           key={section.id}
           id={section.id}
-          initial={{ opacity: 0, x: -100 }} // Comienza con opacidad 0 y desplazamiento hacia la izquierda
-          animate={{ opacity: 1, x: 0 }} // Finaliza con opacidad 1 y sin desplazamiento
-          exit={{ opacity: 0, x: 100 }} // Si el componente sale, se desplaza hacia la derecha
-					// Duración de la animación a cada uno aumenta 0.1 de delay
-          transition={{ duration: 0.6}}
-          className="flex flex-col items-center bg-white border border-gray-200 rounded-xl shadow md:flex-row md:max-w-[60rem] dark:border-gray-700 dark:bg-gray-800 py-4 my-10"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center bg-white border border-gray-200 rounded-xl shadow md:flex-row md:max-w-[60rem] dark:border-gray-700 dark:bg-gray-800 py-4 my-10 h-80"
         >
           <img
             className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
             src={section.imgSrc}
             alt={section.title}
           />
-          <div className="flex flex-col justify-between p-4 leading-normal">
+          <div className="flex flex-col justify-between p-16 leading-normal">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {section.title}
             </h5>
@@ -78,24 +109,40 @@ export default function Content() {
               {section.description}
             </p>
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-orange-500 dark:hover:bg-orange-400 dark:focus:ring-blue-800"
+              {/* Botón para abrir Video */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => handleOpenWindow(section.videoLink, "video")}
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-300"
               >
                 Video
                 <FaPlay className="mx-2" />
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              </motion.button>
+
+              {/* Botón para abrir PDF */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => handleOpenWindow(section.pdfLink, "pdf")}
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
               >
                 Documento
                 <IoMdDocument className="mx-2" />
-              </a>
+              </motion.button>
             </div>
           </div>
         </motion.div>
       ))}
+
+      {isWindowOpen && (
+        <Window section="Ver Contenido" onClose={handleCloseWindow}>
+          {contentType === "pdf" && (
+            <PDFViewer file={fileContent} name={pdfTitle} version={pdfDate} />
+          )}
+          {contentType === "video" && <YouTubeViewer videoUrl={fileContent} />}
+        </Window>
+      )}
     </div>
   );
 }

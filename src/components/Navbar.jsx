@@ -77,12 +77,6 @@ export default function Navbar() {
     <nav className={`bg-orange-400 transition-shadow duration-300 rounded-lg fixed pb-2 w-[20%] h-[85%] z-20 ${isOpen || scrollPos > 10 ? "shadow-lg" : ""}`}>
       <div className="container mx-auto">
         <div className="flex flex-col items-start p-5 space-y-6 bg-tertiary-300">
-          {/* <div onClick={handleOpen} className="w-max">
-            <a href="#">
-              <img className="h-10 w-auto" src="/logo-ihc.png" alt="shopify-icon" />
-            </a>
-          </div> */}
-
           <div onClick={handleOpen} className={`flex flex-col items-center w-fit gap-[7px] cursor-pointer md:hidden z-20 transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}>
             <span className={`transition-all duration-300 ease-in-out h-[2px] w-5 bg-black-500 rounded-full ${isOpen ? "bg-white" : ""}`}></span>
             <span className={`transition-all duration-300 ease-in-out h-[2px] w-4 bg-black-500 rounded-full ${isOpen ? "bg-white" : ""}`}></span>
@@ -90,11 +84,12 @@ export default function Navbar() {
           </div>
 
           <div className="flex flex-col items-start w-full space-y-4 text-black-200 text-sm font-body">
-            {sections.map(({ name, path }) => (
+            {
+            sections.map(({ name, path }) => (
               <div key={name} className="relative">
                 <a
                   href={path}
-                  className={`relative navlink block py-2 px-4 w-full ${selectedItem === name ? "text-primary-100 font-bold" : "text-black-200"} transition-colors duration-300 ease-in-out font-sourgummy`}
+                  className={`relative navlink block py-2 px-4 w-full ${selectedItem === name ? "text-primary-100 font-bold italic" : "text-black-200"} transition-colors duration-300 ease-in-out font-sourgummy text-2xl`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleItemClick(name, path);

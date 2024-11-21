@@ -31,7 +31,7 @@ const Home = () => {
             </div>
 
             {/* Contenido en el lado derecho con el 80% restante */}
-            <div className="w-4/5 bg-white h-[96%] rounded-lg overflow-auto">
+            <div className="w-4/5 bg-orange-400 h-[96%] rounded-lg overflow-auto">
               <Content />
             </div>
           </div>
@@ -61,7 +61,7 @@ const Home = () => {
       <div className="grid h-full w-full grid-cols-3 grid-rows-6 gap-4">
         {/* Primer div: aparece desde arriba */}
         <motion.div
-          className="col-span-2 row-span-3 rounded-3xl bg-orange-400 flex items-center justify-center"
+          className="col-span-2 row-span-3 rounded-3xl bg-orange-400 flex items-center justify-center gap-x-20 font-sourgummy"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0 }}
@@ -95,6 +95,9 @@ const Home = () => {
               Computador
             </motion.div>
           </h1>
+          <p className="text-lg md:text-xl mb-6 max-w-xl">
+            Diseño centrado en el usuario
+          </p>
 
         </motion.div>
 

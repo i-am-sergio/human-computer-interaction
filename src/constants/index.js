@@ -22,6 +22,7 @@ import {
   boga,
   projects_videface,
   rentacar4less,
+  rocket,
 } from "../assets";
 
 import cristianAvalo from "../assets/cristianavalo.webp";
@@ -493,9 +494,9 @@ const projects = [
 const EtapasProject = [
   {
     id: "1",
-    logo: rentacar4less,
+    logo: rocket,
     title: "Viabilidad del Proyecto",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    desc: "La viabilidad del proyecto se evaluó mediante un análisis que incluyó la revisión de trabajos previos y encuestas a usuarios, con el fin de validar la idea y asegurar su aceptación y factibilidad. Los resultados obtenidos de estos estudios permitieron tomar decisiones clave para garantizar la viabilidad técnica y la adecuación del proyecto al público objetivo.",
     linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
     linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
     date: "June 10-18",
@@ -514,7 +515,7 @@ const EtapasProject = [
   {
     id: "3",
     logo: rentacar4less,
-    title: "NeedFinding",
+    title: "StoryBoarding",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
     linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
@@ -524,8 +525,8 @@ const EtapasProject = [
   {
     id: "4",
     logo: rentacar4less,
-    title: "NeedFinding",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    title: "Prototipo de Baja Fidelidad",
+    desc: "Proximamente",
     linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
     linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
     date: "June 10-18",

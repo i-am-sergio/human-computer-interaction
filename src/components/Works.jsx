@@ -55,16 +55,16 @@ const NeedFindingCard = ({
               onClick={() => onOpenWindow(filePDF, title, date, "pdf")}
               className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300"
             >
-              Ver Documento
+              Documento
             </motion.button>
             {/* Button to open Video */}
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => onOpenWindow(linkVideo, title, date, "video")}
-              className="bg-red-600 hover:bg-red-500 text-white py-2 px-4 rounded-lg transition duration-300"
+              className="bg-orange-400 hover:bg-orange-300 text-white py-2 px-4 rounded-lg transition duration-300"
             >
-              Ver Video
+              Video
             </motion.button>
           </div>
         </div>
@@ -73,7 +73,7 @@ const NeedFindingCard = ({
         <div className="flex flex-col">
           {/* Image */}
           <motion.div
-            className="overflow-hidden h-[300px] w-[100px] rounded-lg"
+            className="overflow-hidden h-[300px] w-[200px] rounded-lg"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
@@ -125,20 +125,32 @@ const Works = () => {
           {contentType === "video" && <YouTubeViewer videoUrl={fileContent} />}
         </Window>
       )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {EtapasProject.map((project) => (
-          <NeedFindingCard
-            key={project.id}
-            logo={project.logo}
-            title={project.title}
-            desc={project.desc}
-            linkVideo={project.linkVideo}
-            date={project.date}
-            image={project.image}
-            onOpenWindow={handleOpenWindow} // Pasamos la función para abrir la ventana
-            filePDF={project.linkPDF} // Pasamos la URL del PDF
-          />
-        ))}
+      <div className="w-full h-full flex justify-center items-center bg-transparent">
+        <div
+          style={{
+            width: "100%",
+            height: "calc(100vh - 100px)", // Modificado para usar el mismo alto que el PDFViewer
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            {EtapasProject.map((project) => (
+              <NeedFindingCard
+                key={project.id}
+                logo={project.logo}
+                title={project.title}
+                desc={project.desc}
+                linkVideo={project.linkVideo}
+                date={project.date}
+                image={project.image}
+                onOpenWindow={handleOpenWindow} // Pasamos la función para abrir la ventana
+                filePDF={project.linkPDF} // Pasamos la URL del PDF
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

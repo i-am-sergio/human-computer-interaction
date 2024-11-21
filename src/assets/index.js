@@ -40,8 +40,9 @@ import email from "./email.svg";
 import youtube from "./youtube.svg";
 import instagram from "./instagram.svg";
 import playVideo from "./play.svg";
-
+import rocket from "./rocket.svg";
 export {
+  rocket,
   logo,
   backend,
   creator,

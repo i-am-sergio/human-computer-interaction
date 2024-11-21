@@ -490,4 +490,55 @@ const projects = [
   // },
 ];
 
-export { services, technologies, experiences, testimonials, projects, videos };
+const EtapasProject = [
+  {
+    id: "1",
+    logo: rentacar4less,
+    title: "Viabilidad del Proyecto",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
+    linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
+    date: "June 10-18",
+    image: rentacar4less,
+  },
+  {
+    id: "2",
+    logo: rentacar4less,
+    title: "NeedFinding",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
+    linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
+    date: "June 10-18",
+    image: rentacar4less,
+  },
+  {
+    id: "3",
+    logo: rentacar4less,
+    title: "NeedFinding",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
+    linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
+    date: "June 10-18",
+    image: rentacar4less,
+  },
+  {
+    id: "4",
+    logo: rentacar4less,
+    title: "NeedFinding",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
+    linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
+    date: "June 10-18",
+    image: rentacar4less,
+  },
+];
+
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  videos,
+  EtapasProject,
+};

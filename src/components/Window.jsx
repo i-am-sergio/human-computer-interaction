@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 
 const Window = ({ section, onClose, children }) => {
@@ -14,7 +14,7 @@ const Window = ({ section, onClose, children }) => {
       >
         {/* Header de la ventana */}
         <div className="flex justify-between items-center bg-slate-600 text-white p-2 rounded-t-xl">
-          <span className="text-lg">{section}</span>
+          <span className="text-lg font-sourgummy">{section}</span>
           <button
             className="bg-[#fff] text-black py-2 px-4 rounded-lg hover:bg-[#c53030] transition-all"
             onClick={onClose}
@@ -24,12 +24,10 @@ const Window = ({ section, onClose, children }) => {
         </div>
 
         {/* Contenido de la ventana */}
-        <div className="flex-grow p-5 overflow-y-scroll">
-          {children}
-        </div>
+        <div className="flex-grow p-5 h-full">{children}</div>
       </motion.div>
     </div>
   );
-}
+};
 
 export default Window;

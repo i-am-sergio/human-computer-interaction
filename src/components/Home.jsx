@@ -1,27 +1,27 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { styles } from "../styles";
-import Window from './Window';
-import './Home.css';
+import Window from "./Window";
+import "./Home.css";
 
-import Works from './Works';
-import Nosotros from './Nosotros';  // Importa el componente Nosotros
-import Videojuego from './Videojuego';  // Importa el componente Videojuego
+import Works from "./Works";
+import Nosotros from "./Nosotros"; // Importa el componente Nosotros
+import Videojuego from "./Videojuego"; // Importa el componente Videojuego
 
 function Home() {
   const [activeWindow, setActiveWindow] = useState(null);
-  const [activeComponent, setActiveComponent] = useState(null);  // Para gestionar qué componente mostrar
+  const [activeComponent, setActiveComponent] = useState(null); // Para gestionar qué componente mostrar
 
   const handleOpenWindow = (section) => {
     setActiveWindow(section);
     switch (section) {
-      case 'Nosotros':
+      case "Nosotros":
         setActiveComponent(<Nosotros />);
         break;
-      case 'Videojuego':
+      case "Videojuego":
         setActiveComponent(<Videojuego />);
         break;
-      case 'Proyecto Final':
+      case "Proyecto Final":
         setActiveComponent(<Works />);
         break;
       default:
@@ -32,10 +32,10 @@ function Home() {
 
   const handleCloseWindow = () => {
     setActiveWindow(null);
-    setActiveComponent(null);  // Resetear el componente cuando se cierra la ventana
+    setActiveComponent(null); // Resetear el componente cuando se cierra la ventana
   };
 
-  const sections = ['Nosotros', 'Videojuego', 'Proyecto Final'];
+  const sections = ["Nosotros", "Videojuego", "Proyecto Final"];
 
   return (
     <div className="home relative">
@@ -87,9 +87,13 @@ function Home() {
         {/* Primera fila: sección que ocupa todo el ancho */}
         <motion.button
           key={sections[0]}
-          className='motion-subtitle bg-slate-400 text-black px-48 py-8 text-2xl col-span-2'
+          className="motion-subtitle bg-slate-400 text-black px-48 py-8 text-2xl col-span-2"
           onClick={() => handleOpenWindow(sections[0])}
-          whileHover={{ scale: 1.05, backgroundColor: "#8da0c1", transition: { duration: 0.3 } }}
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: "#8da0c1",
+            transition: { duration: 0.3 },
+          }}
           whileTap={{ scale: 0.95 }}
         >
           {sections[0]}
@@ -99,9 +103,13 @@ function Home() {
         {sections.slice(1).map((section, index) => (
           <motion.button
             key={section}
-            className='motion-subtitle bg-slate-400 text-black px-48 py-32 text-xl'
+            className="motion-subtitle bg-slate-400 text-black px-48 py-32 text-xl"
             onClick={() => handleOpenWindow(section)}
-            whileHover={{ scale: 1.05, backgroundColor: "#8da0c1", transition: { duration: 0.3 } }}
+            whileHover={{
+              scale: 1.05,
+              backgroundColor: "#8da0c1",
+              transition: { duration: 0.3 },
+            }}
             whileTap={{ scale: 0.95 }}
           >
             {section}

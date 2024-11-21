@@ -26,8 +26,10 @@ const VerticalNavbar = () => {
     { title: 'Viabilidad', text: <Etapa /> }, // Componente Etapa en la primera sección
     { title: 'Needfinding', text: 'Contenido de la sección 2' },
     { title: 'Storyboard', text: 'Contenido de la sección 3' },
-    { title: 'Sección 4', text: 'Contenido de la sección 4' },
-    { title: 'Sección 5', text: 'Contenido de la sección 5' },
+    { title: 'Prototipo en Papel', text: 'Contenido de la sección 4' },
+    { title: 'Primer Prototipo', text: 'Contenido de la sección 5' },
+    { title: 'Segundo Prototipo', text: 'Contenido de la sección 6' },
+
   ];
 
   return (

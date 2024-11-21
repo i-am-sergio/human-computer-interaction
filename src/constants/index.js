@@ -23,6 +23,8 @@ import {
   projects_videface,
   rentacar4less,
   rocket,
+  person,
+  book,
 } from "../assets";
 
 import cristianAvalo from "../assets/cristianavalo.webp";
@@ -499,27 +501,27 @@ const EtapasProject = [
     desc: "La viabilidad del proyecto se evaluó mediante un análisis que incluyó la revisión de trabajos previos y encuestas a usuarios, con el fin de validar la idea y asegurar su aceptación y factibilidad. Los resultados obtenidos de estos estudios permitieron tomar decisiones clave para garantizar la viabilidad técnica y la adecuación del proyecto al público objetivo.",
     linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
     linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
-    date: "June 10-18",
+    date: "Octubre 14-18",
     image: rentacar4less,
   },
   {
     id: "2",
-    logo: rentacar4less,
+    logo: person,
     title: "NeedFinding",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    desc: "El proceso de needfinding se llevó a cabo mediante encuestas a usuarios y entrevistas con un experto en el área, lo que permitió identificar necesidades clave y perspectivas relevantes. Esta combinación de enfoques facilitó la definición de prioridades basadas en las expectativas y requerimientos de los usuarios, orientando el proyecto hacia soluciones efectivas y centradas en ellos.",
     linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
-    linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
-    date: "June 10-18",
+    linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa2.pdf",
+    date: "Octubre 21-31",
     image: rentacar4less,
   },
   {
     id: "3",
-    logo: rentacar4less,
+    logo: book,
     title: "StoryBoarding",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
     linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
-    date: "June 10-18",
+    date: "Noviembre 4-21",
     image: rentacar4less,
   },
   {
@@ -529,7 +531,7 @@ const EtapasProject = [
     desc: "Proximamente",
     linkVideo: "https://www.youtube.com/watch?v=8SB1GZNbnus",
     linkPDF: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
-    date: "June 10-18",
+    date: "Noviembre",
     image: rentacar4less,
   },
 ];

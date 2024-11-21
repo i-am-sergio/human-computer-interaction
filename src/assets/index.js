@@ -41,7 +41,11 @@ import youtube from "./youtube.svg";
 import instagram from "./instagram.svg";
 import playVideo from "./play.svg";
 import rocket from "./rocket.svg";
+import person from "./person.svg";
+import book from "./book.svg";
 export {
+  book,
+  person,
   rocket,
   logo,
   backend,

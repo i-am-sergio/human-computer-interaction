@@ -14,16 +14,14 @@ const Etapa = ( {title, text} ) => {
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         {text}
                     </p>
-                    <button className="px-4 py-2 my-4 text-sm font-semibold text-white uppercase transition-colors duration-200 transform bg-blue-500 rounded hover:bg-blue-400 focus:outline-none focus:bg-blue-400">
+                    <button className="px-4 py-2 my-4 text-sm font-semibold text-white uppercase transition-colors duration-200 transform bg-orange-400 rounded hover:bg-blue-400 focus:outline-none focus:bg-blue-400">
                         Documento PDF <IoMdDocument />
                     </button>
-                    <button className="px-4 py-4 text-sm font-semibold text-white uppercase transition-colors duration-200 transform bg-blue-500 rounded hover:bg-blue-400 focus:outline-none focus:bg-blue-400">
+                    <button className="px-4 py-4 text-sm font-semibold text-white uppercase transition-colors duration-200 transform bg-orange-400 rounded hover:bg-blue-400 focus:outline-none focus:bg-blue-400">
                         Documento PDF <IoMdDocument />
                     </button>
                 </div>
             </a>
-
-
         </div>
     )
 }

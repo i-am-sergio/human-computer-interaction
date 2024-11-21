@@ -1,13 +1,46 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import Window from '../components/Window';
 import "./Home.css"
 
 import imgSergio from "../assets/1.jpeg";
 import imgBraulio from "../assets/2.jpeg";
 import imgNelzon from "../assets/Nelzon.jpg";
-import { img } from 'framer-motion/client';
+
+import Works from '../components/Works';
+import Nosotros from '../components/Nosotros';  // Importa el componente Nosotros
+import Videojuego from '../components/Videojuego';  // Importa el componente Videojuego
+import VerticalNavbar from '../components/VerticalNavbar';
+
 
 const Home = () => {
+
+  const [activeWindow, setActiveWindow] = useState(null);
+  const [activeComponent, setActiveComponent] = useState(null);  // Para gestionar qué componente mostrar
+
+  const handleOpenWindow = (section) => {
+    setActiveWindow(section);
+    switch (section) {
+      case 'Videojuego':
+        setActiveComponent(<VerticalNavbar />);
+        break;
+      case 'Proyecto Final':
+        setActiveComponent(<Works />);
+        break;
+      case 'Nosotros':
+        setActiveComponent(<Nosotros />);
+        break;
+      default:
+        setActiveComponent(<Works />);
+        break;
+    }
+  };
+
+  const handleCloseWindow = () => {
+    setActiveWindow(null);
+    setActiveComponent(null);  // Resetear el componente cuando se cierra la ventana
+  };
+
   return (
     <div
       className="flex h-screen w-full flex-col items-center justify-center rounded-lg p-6 dark:bg-slate-900"
@@ -53,79 +86,79 @@ const Home = () => {
         </motion.div>
 
         {/* Segundo div: aparece desde la derecha */}
-<motion.div
-  className="row-span-4 rounded-3xl bg-orange-400 flex flex-col items-center justify-center gap-4 p-4"
-  initial={{ opacity: 0, x: 20 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1.0, delay: 0.1 }}
->
-  {/* Título principal */}
-  <motion.div
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.4 }}
-    className="text-slate-900 text-3xl font-bold text-center font-sourgummy"
-  >
-    Nosotros
-  </motion.div>
+        <motion.div
+          className="row-span-4 rounded-3xl bg-orange-400 flex flex-col items-center justify-center gap-4 p-4"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.0, delay: 0.1 }}
+        >
+          {/* Título principal */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-slate-900 text-4xl font-bold text-center font-sourgummy"
+          >
+            Nosotros
+          </motion.div>
 
-  {/* Lista de tarjetas */}
-  <div className="flex flex-col items-center justify-center gap-3 w-full">
-    {/* Card: Sergio Mogollón */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.6 }}
-      className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[80%] flex items-center justify-between"
-    >
-      <div>
-        <div className="font-bold">Sergio Mogollón</div>
-        <div className="text-sm text-gray-600">Estudiante de Ciencia de la Computación</div>
-      </div>
-      <img
-        src={imgSergio}
-        alt="Sergio Mogollón"
-        className="w-12 h-12 rounded-full"
-      />
-    </motion.div>
+          {/* Lista de tarjetas */}
+          <div className="flex flex-col items-center justify-center gap-3 w-full">
+            {/* Card: Sergio Mogollón */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
+            >
+              <div>
+                <div className="font-bold">Sergio Mogollón</div>
+                <div className="text-sm text-gray-600">Estudiante de Ciencia de la Computación</div>
+              </div>
+              <img
+                src={imgSergio}
+                alt="Sergio Mogollón"
+                className="w-12 h-12 rounded-full"
+              />
+            </motion.div>
 
-    {/* Card: Braulio Maldonado */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.7 }}
-      className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[80%] flex items-center justify-between"
-    >
-      <div>
-        <div className="font-bold">Braulio Maldonado</div>
-        <div className="text-sm text-gray-600">Estudiante de Ciencia de la Computación</div>
-      </div>
-      <img
-        src={imgBraulio}
-        alt="Braulio Maldonado"
-        className="w-12 h-12 rounded-full"
-      />
-    </motion.div>
+            {/* Card: Braulio Maldonado */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
+            >
+              <div>
+                <div className="font-bold">Braulio Maldonado</div>
+                <div className="text-sm text-gray-600">Estudiante de Ciencia de la Computación</div>
+              </div>
+              <img
+                src={imgBraulio}
+                alt="Braulio Maldonado"
+                className="w-12 h-12 rounded-full"
+              />
+            </motion.div>
 
-    {/* Card: Nelzon Apaza */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
-      className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[80%] flex items-center justify-between"
-    >
-      <div>
-        <div className="font-bold">Nelzon Apaza</div>
-        <div className="text-sm text-gray-600">Estudiante de Ciencia de la Computación</div>
-      </div>
-      <img
-        src={imgNelzon}
-        alt="Nelzon Apaza"
-        className="w-12 h-12 rounded-full"
-      />
-    </motion.div>
-  </div>
-</motion.div>
+            {/* Card: Nelzon Apaza */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
+            >
+              <div>
+                <div className="font-bold">Nelzon Apaza</div>
+                <div className="text-sm text-gray-600">Estudiante de Ciencia de la Computación</div>
+              </div>
+              <img
+                src={imgNelzon}
+                alt="Nelzon Apaza"
+                className="w-12 h-12 rounded-full"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
 
 
 
@@ -135,6 +168,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.2 }}
+          onClick={() => handleOpenWindow('Videojuego')}
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -152,6 +186,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.3 }}
+          onClick={() => handleOpenWindow('Proyecto Final')}
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -170,6 +205,16 @@ const Home = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.0, delay: 0.4 }}
         ></motion.div>
+
+        <AnimatePresence>
+          {activeWindow && (
+            <Window section={activeWindow} onClose={handleCloseWindow}>
+              {/* Aquí pasamos el componente correspondiente como children */}
+              {activeComponent}
+            </Window>
+          )}
+        </AnimatePresence>
+        
       </div>
     </div>
   )

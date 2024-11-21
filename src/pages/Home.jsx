@@ -10,7 +10,8 @@ import imgNelzon from "../assets/Nelzon.jpg";
 import Works from '../components/Works';
 import Nosotros from '../components/Nosotros';  // Importa el componente Nosotros
 import Videojuego from '../components/Videojuego';  // Importa el componente Videojuego
-import VerticalNavbar from '../components/VerticalNavbar';
+import Navbar from '../components/Navbar';
+import Content from '../components/Content';
 
 
 const Home = () => {
@@ -22,7 +23,19 @@ const Home = () => {
     setActiveWindow(section);
     switch (section) {
       case 'Videojuego':
-        setActiveComponent(<VerticalNavbar />);
+        setActiveComponent(
+          <div className="flex h-[96%] gap-8">
+            {/* Navbar en el lado izquierdo con 20% de ancho */}
+            <div className="w-1/5 bg-transparent">
+              <Navbar />
+            </div>
+
+            {/* Contenido en el lado derecho con el 80% restante */}
+            <div className="w-4/5 bg-white h-[96%] rounded-lg overflow-auto">
+              <Content />
+            </div>
+          </div>
+        );
         break;
       case 'Proyecto Final':
         setActiveComponent(<Works />);
@@ -214,7 +227,7 @@ const Home = () => {
             </Window>
           )}
         </AnimatePresence>
-        
+
       </div>
     </div>
   )

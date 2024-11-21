@@ -1,0 +1,24 @@
+/* Navbar */
+nav {
+    background-color: #f8f9fa; /* Cambia el color de fondo del navbar */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Sombra del navbar */
+  }
+  
+  /* Links activos */
+  nav .navlink:hover,
+  nav .navlink:active,
+  nav .navlink:focus {
+    color: #007bff; /* Cambia el color de los enlaces al hacer hover */
+  }
+  
+  /* Efecto de subrayado */
+  nav .navlink span {
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  nav .navlink.active span {
+    transform: scaleX(1);
+  }
+  

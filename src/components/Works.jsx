@@ -12,6 +12,7 @@ import { IoMdDocument } from "react-icons/io";
 import { AiFillFilePpt } from "react-icons/ai";
 import { FaPlay, FaUser } from "react-icons/fa";
 const NeedFindingCard = ({
+  htmlId,
   logo,
   title,
   desc,
@@ -25,14 +26,15 @@ const NeedFindingCard = ({
 }) => {
   return (
     <Tilt
-      className="w-full max-w-4xl mx-auto"
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
+      className="w-full max-w-4xl mx-auto mb-6"
+      tiltMaxAngleX={3}
+      tiltMaxAngleY={3}
       perspective={1000}
-      scale={1.05}
+      scale={1.01}
     >
       <motion.div
-        className="bg-gray-900 text-white rounded-lg shadow-lg flex flex-row p-6 gap-6"
+        id={htmlId}
+        className="bg-gray-900 text-white rounded-2xl shadow-lg flex flex-row p-6 gap-6"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -51,7 +53,7 @@ const NeedFindingCard = ({
           </div>
 
           {/* Buttons */}
-          <div className="flex justify-center gap-4 mt-6">
+          <div className="flex justify-center gap-4 grid-cols-3 my-6">
             {/* Button to open PDF */}
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -152,7 +154,7 @@ const Works = () => {
           {contentType === "video" && <YouTubeViewer videoUrl={fileContent} />}
         </Window>
       )}
-      <div className="w-full h-full flex justify-center items-center bg-transparent">
+      <div className="pt-72 w-full h-full flex justify-center items-center bg-transparent">
         <div
           style={{
             width: "100%",
@@ -163,9 +165,10 @@ const Works = () => {
           }}
         >
           {/* Ajuste del grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
             {EtapasProject.map((project) => (
               <NeedFindingCard
+                htmlId = {project.htmlId}
                 key={project.id}
                 logo={project.logo}
                 title={project.title}

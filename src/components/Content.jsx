@@ -17,14 +17,16 @@ import Window from "./Window";
 // Datos de las secciones
 const sections = [
   {
+    number: 1,
     id: "creacion-idea",
-    title: "Creación de la Idea",
+    title: "Viabilidad y Creación de la Idea",
     imgSrc: ideas,
     description: "Se generó la idea inicial de un juego de supervivencia en una isla tras un accidente de avión, donde el jugador debe sobrevivir hasta ser rescatado o encontrar una salida. Se definieron los desafíos que enfrentarían los jugadores en la isla, como la búsqueda de recursos para sobrevivir y la exploración del entorno.",
     pdfLink: "/assets/creacion-idea.pdf",
-    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
+    videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
   },
   {
+    number: 2,
     id: "sketching",
     title: "Sketching",
     imgSrc: sketching,
@@ -33,6 +35,7 @@ const sections = [
     videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
   {
+    number: 3,
     id: "storyboarding",
     title: "Storyboarding",
     imgSrc: storyboarding,
@@ -41,23 +44,26 @@ const sections = [
     videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
   },
   {
+    number: 4,
     id: "prototipo-papel",
     title: "Prototipo de Papel",
     imgSrc: maqueta,
     description: "Se desarrolló un prototipo jugable y se realizó una evaluación con usuarios que ayudó a recoger retroalimentación sobre la experiencia de supervivencia. Los usuarios probaron las mecánicas del juego y dieron opiniones sobre la narrativa y el contexto de la historia en la isla.",
   
     pdfLink: "/assets/prototipo-papel.pdf",
-    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
+    videoLink: "https://www.youtube.com/watch?v=uHV0Eu4S6Ts",
   },
   {
+    number: 5,
     id: "primer-prototipo",
     title: "Primer Prototipo",
     imgSrc: prototipo5,
     description: "El primer prototipo se centró en la supervivencia en la isla, pero la retroalimentación de los usuarios reveló que necesitaban una razón clara para estar ahí. Esto llevó a modificar la idea hacia la historia de un astronauta en un planeta desconocido, con el objetivo de reparar su nave para poder irse.",
     pdfLink: "/assets/primer-prototipo.pdf",
-    videoLink: "https://www.youtube.com/embed/kR7P4ruR6nw",
+    videoLink: "https://www.youtube.com/watch?v=eyl-XC-L07w",
   },
   {
+    number: 6,
     id: "segundo-prototipo",
     title: "Segundo Prototipo",
     imgSrc: prototipo6,
@@ -86,7 +92,7 @@ export default function Content() {
   };
 
   return (
-    <div className="content-container px-8 flex-1 bg-orange-400">
+    <div className="content-container px-8 flex-1 bg-emerald-300">
       {sections.map((section) => (
         <motion.div
           key={section.id}
@@ -94,18 +100,18 @@ export default function Content() {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center bg-white border border-gray-200 rounded-xl shadow md:flex-row md:max-w-[60rem] dark:border-gray-700 dark:bg-gray-800 py-4 my-10 h-80"
+          className="flex flex-col items-center border border-none rounded-2xl shadow md:flex-row md:max-w-[60rem] bg-slate-900 py-4 my-10 h-80"
         >
           <img
-            className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+            className="object-cover w-full pl-4 rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
             src={section.imgSrc}
             alt={section.title}
           />
           <div className="flex flex-col justify-between p-16 leading-normal">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {section.title}
+            <h5 className="mb-2 text-3xl font-bold tracking-tight text-gray-300 font-sourgummy">
+              {section.number} . {section.title}
             </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p className="mb-3 font-normal text-gray-200">
               {section.description}
             </p>
             <div className="flex space-x-4">
@@ -114,35 +120,35 @@ export default function Content() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => handleOpenWindow(section.videoLink, "video")}
-                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-300"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-400 rounded-lg hover:bg-violet-500"
               >
                 Video
                 <FaPlay className="mx-2" />
               </motion.button>
 
               {/* Botón para abrir PDF */}
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => handleOpenWindow(section.pdfLink, "pdf")}
-                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800"
               >
                 Documento
                 <IoMdDocument className="mx-2" />
-              </motion.button>
+              </motion.button> */}
             </div>
           </div>
         </motion.div>
       ))}
 
-      {isWindowOpen && (
+      {/* {isWindowOpen && (
         <Window section="Ver Contenido" onClose={handleCloseWindow}>
           {contentType === "pdf" && (
             <PDFViewer file={fileContent} name={pdfTitle} version={pdfDate} />
           )}
           {contentType === "video" && <YouTubeViewer videoUrl={fileContent} />}
         </Window>
-      )}
+      )} */}
     </div>
   );
 }

@@ -20,6 +20,7 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import csunsa from "./csunsa.png";
 
 import c from "./tech/c.png";
 import aframe from "./tech/aframe.png";
@@ -92,4 +93,5 @@ export {
   youtube,
   instagram,
   playVideo,
+  csunsa,
 };

@@ -6,6 +6,7 @@ import "./Home.css"
 import imgSergio from "../assets/1.jpeg";
 import imgBraulio from "../assets/2.jpeg";
 import imgNelzon from "../assets/Nelzon.jpg";
+import imgCSUNSA from "../assets/csunsa.png";
 
 import Works from '../components/Works';
 import Nosotros from '../components/Nosotros';  // Importa el componente Nosotros
@@ -27,18 +28,33 @@ const Home = () => {
           <div className="flex h-[96%] gap-8">
             {/* Navbar en el lado izquierdo con 20% de ancho */}
             <div className="w-1/5 bg-transparent">
-              <Navbar />
+              <Navbar project={null} />
             </div>
 
             {/* Contenido en el lado derecho con el 80% restante */}
-            <div className="w-4/5 bg-orange-400 h-[96%] rounded-lg overflow-auto">
+            <div className="w-4/5 bg-emerald-300 h-[96%] rounded-lg overflow-auto">
               <Content />
             </div>
           </div>
         );
         break;
       case 'Proyecto Final':
-        setActiveComponent(<Works />);
+        setActiveComponent(
+
+          <div className="flex h-[96%] gap-8">
+            {/* Navbar en el lado izquierdo con 20% de ancho */}
+            <div className="w-1/5 bg-transparent">
+              <Navbar project={true} />
+            </div>
+
+            {/* Contenido en el lado derecho con el 80% restante */}
+            <div className="w-4/5 bg-emerald-300 h-[96%] rounded-lg overflow-auto">
+              <Works />
+              {/* <Content /> */}
+            </div>
+          </div>
+
+        );
         break;
       case 'Nosotros':
         setActiveComponent(<Nosotros />);
@@ -61,7 +77,7 @@ const Home = () => {
       <div className="grid h-full w-full grid-cols-3 grid-rows-6 gap-4">
         {/* Primer div: aparece desde arriba */}
         <motion.div
-          className="col-span-2 row-span-3 rounded-3xl bg-orange-400 flex items-center justify-center gap-x-20 font-sourgummy"
+          className="col-span-2 row-span-3 rounded-3xl bg-emerald-300 flex items-center justify-center gap-x-20 font-sourgummy"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0 }}
@@ -103,7 +119,7 @@ const Home = () => {
 
         {/* Segundo div: aparece desde la derecha */}
         <motion.div
-          className="row-span-4 rounded-3xl bg-orange-400 flex flex-col items-center justify-center gap-4 p-4"
+          className="row-span-4 rounded-3xl bg-emerald-300 flex flex-col items-center justify-center gap-4 p-4"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.0, delay: 0.1 }}
@@ -125,7 +141,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
+              className="bg-emerald-100 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
             >
               <div>
                 <div className="font-bold">Sergio Mogollón</div>
@@ -143,7 +159,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
+              className="bg-emerald-100 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
             >
               <div>
                 <div className="font-bold">Braulio Maldonado</div>
@@ -161,7 +177,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="bg-orange-200 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
+              className="bg-emerald-100 text-slate-900 text-lg font-medium px-4 py-4 rounded-xl shadow-md w-full max-w-[90%] sm:max-w-[90%] flex items-center justify-between"
             >
               <div>
                 <div className="font-bold">Nelzon Apaza</div>
@@ -180,25 +196,26 @@ const Home = () => {
 
         {/* Tercer div: aparece desde abajo */}
         <motion.div
-          className="row-span-3 rounded-3xl bg-orange-400 flex items-center justify-center cursor-pointer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0, delay: 0.2 }}
-          onClick={() => handleOpenWindow('Videojuego')}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-slate-900 text-4xl font-bold text-center font-sourgummy"
-          >
-            VideoJuego
-          </motion.div>
-        </motion.div>
+  className="row-span-3 rounded-3xl bg-emerald-300 flex items-center justify-center cursor-pointer border-2 border-transparent hover:border-gray-200 hover:bg-emerald-400"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1.0, delay: 0.2 }}
+  onClick={() => handleOpenWindow('Videojuego')}
+>
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+    className="text-slate-900 text-4xl font-bold text-center font-sourgummy"
+  >
+    VideoJuego
+  </motion.div>
+</motion.div>
+
 
         {/* Cuarto div: aparece desde abajo */}
         <motion.div
-          className="row-span-3 rounded-3xl bg-orange-400 flex items-center justify-center cursor-pointer"
+          className="row-span-3 rounded-3xl bg-emerald-300 flex items-center justify-center cursor-pointer border-2 border-transparent hover:border-gray-200 hover:bg-emerald-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.3 }}
@@ -216,11 +233,19 @@ const Home = () => {
 
         {/* Quinto div: aparece desde la derecha */}
         <motion.div
-          className="row-span-2 rounded-3xl bg-orange-400"
+          className="row-span-2 rounded-3xl bg-emerald-300 text-center flex items-center justify-center"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.0, delay: 0.4 }}
-        ></motion.div>
+        >
+          {/* Insert image */}
+          <img
+            src={imgCSUNSA}
+            alt="Proyecto Final"
+            className="h-3/4 object-cover rounded-3xl"
+          />
+
+        </motion.div>
 
         <AnimatePresence>
           {activeWindow && (

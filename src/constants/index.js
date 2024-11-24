@@ -497,6 +497,7 @@ const projects = [
 
 const EtapasProject = [
   {
+    htmlId : "viabilidad",
     id: "1",
     logo: rocket,
     title: "Viabilidad del Proyecto",
@@ -507,6 +508,7 @@ const EtapasProject = [
     image: rentacar4less,
   },
   {
+    htmlId : "needfinding",
     id: "2",
     logo: person,
     title: "NeedFinding",
@@ -519,6 +521,7 @@ const EtapasProject = [
     image: needfinding,
   },
   {
+    htmlId : "storyboarding",
     id: "3",
     logo: book,
     title: "StoryBoarding",

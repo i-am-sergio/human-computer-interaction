@@ -8,6 +8,13 @@ import { AnimationComponent } from './atom/AnimationComponent';
 import { Etapas } from './Etapas';
 import { Window } from './Window';
 
+import ideas1 from '../assets/videogame/1ideas.jpg';
+import storyboard2 from '../assets/videogame/2storyboard.jpg';
+import maqueta3 from '../assets/videogame/3maqueta.jpg';
+import prototipo1 from '../assets/videogame/4prototipo1.png';
+import prototipo2 from '../assets/videogame/5prototipo2.png';
+import prototipo3 from '../assets/videogame/6prototipo3.png';
+
 const dataFeatures = [
   {
     id: 1,
@@ -39,7 +46,8 @@ export const dataVideogame = [
     content: 'Es la evaluación de la factibilidad de un proyecto, con el fin de determinar si es viable o no, y si es viable, cuál es la mejor manera de llevar',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
-
+    date: "Sep 8 - Sep 14",
+    image: ideas1,
   },
   {
     id: 2,
@@ -47,7 +55,8 @@ export const dataVideogame = [
     content: 'Es el proceso de identificar y definir las necesidades de los usuarios, con el fin de desarrollar soluciones que satisfagan sus necesidades y expectativas.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
-
+    date: "Sep 15 - Sep 21",
+    image: storyboard2,
   },
   {
     id: 3,
@@ -55,7 +64,8 @@ export const dataVideogame = [
     content: 'Es una técnica de representación gráfica de una historia o narración, que se utiliza para representar la secuencia de eventos de una historia.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
-
+    date: "Sep 22 - Sep 28",
+    image: storyboard2,
   },
   {
     id: 4,
@@ -63,30 +73,36 @@ export const dataVideogame = [
     content: 'Es el proceso de creación de un prototipo, que es una representación visual de un producto o sistema, que se utiliza para probar y validar la solución propuesta.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
+    date: "Sep 29 - Oct 5",
+    image: maqueta3,
 
   },
   {
     id: 5,
-    title: 'Prototipado de Mediana Fidelidad',
+    title: 'Primer Prototipo',
     content: 'Es el proceso de creación de un prototipo de alta fidelidad, que es una representación visual y funcional de un producto o sistema, que se utiliza para probar y validar la solución propuesta.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
-
+    date: "Oct 6 - Oct 12",
+    image: prototipo1,
   },
   {
     id: 6,
-    title: 'Prototipado de Alta Fidelidad',
+    title: 'Segundo Prototipo',
     content: 'Es el proceso de creación de un prototipo de alta fidelidad, que es una representación visual y funcional de un producto o sistema, que se utiliza para probar y validar la solución propuesta.',
-    videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
+    videoLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
-
+    date: "Oct 13 - Oct 19",
+    image: prototipo2,
   },
   {
     id: 7,
-    title: 'Iteración',
+    title: 'Tercer Prototipo',
     content: 'Es el proceso de revisión y mejora de un diseño, con el fin de corregir errores y optimizar la solución propuesta.',
-    videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
+    videoLink: "https://www.youtube.com/@braulionayapmaldonadocasil8379",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
+    date: "Oct 20 - Oct 26",
+    image: prototipo3,
   }
 ];
 

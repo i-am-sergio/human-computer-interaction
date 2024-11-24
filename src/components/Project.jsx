@@ -8,6 +8,11 @@ import { AnimationComponent } from './atom/AnimationComponent';
 import { Etapas } from './Etapas';
 import { Window } from './Window';
 
+import viabilidad from '../assets/project/viabilidad.webp';
+import needfinding from '../assets/project/needfinding.jpg';
+import storyboard from '../assets/project/storyboarding_p.jpg';
+import paperPrototype from '../assets/project/paper_prototype.png';
+
 const dataFeatures = [
   {
     id: 1,
@@ -41,28 +46,28 @@ export const dataProject = [
     pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
     slideLink: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
     date: "Octubre 14-18",
-    image: "/path/to/image/rocket.png", // Cambia el path según tu proyecto
+    image: viabilidad,
   },
   {
     id: 2,
     title: 'Needfinding',
     content: 'Es el proceso de identificar y definir las necesidades de los usuarios, con el fin de desarrollar soluciones que satisfagan sus necesidades y expectativas.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
-    pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
-    // slideLink: "/path/to/slides/needfinding.pptx", // Enlace a la presentación
+    pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa2.pdf",
+    slideLink: "/human-computer-interaction/Proyecto_IHC_Etapa2_1.pdf",
     date: "Octubre 21-31",
-    image: "/path/to/image/person.png", // Cambia el path según tu proyecto
+    image: needfinding,
   },
   {
     id: 3,
     title: 'Storyboard',
     content: 'Es una técnica de representación gráfica de una historia o narración, que se utiliza para representar la secuencia de eventos de una historia.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
-    pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
+    pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa3.pdf",
     galleryLink: true,
-    // slideLink: "/path/to/slides/storyboard.pptx", // Enlace a la presentación
+    slideLink: "/human-computer-interaction/Proyecto_IHC_Etapa3_1.pdf",
     date: "Noviembre 4-21",
-    image: "/path/to/image/book.png", // Cambia el path según tu proyecto
+    image: storyboard,
   },
   {
     id: 4,
@@ -72,7 +77,7 @@ export const dataProject = [
     pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
     // slideLink: "/path/to/slides/prototipado.pptx", // Enlace a la presentación
     date: "Diciembre 1-5",
-    image: "/path/to/image/rentacar.png", // Cambia el path según tu proyecto
+    image: paperPrototype,
   },
 ];
 

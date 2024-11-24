@@ -6,6 +6,9 @@ import { YouTubeViewer } from "./viewer/YouTubeViewer";
 import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Gallery } from "./atom/Gallery";
+import { IoMdDocument } from "react-icons/io";
+import { LuPresentation } from "react-icons/lu";
+import { FaImage } from "react-icons/fa6";
 
 export const Etapas = ({ dataEtapas }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
@@ -47,99 +50,110 @@ export const Etapas = ({ dataEtapas }) => {
                   transition: { delay: 0.15, duration: 0.3 },
                 },
               }}
+              initial="hidden"
+              animate="visible"
+              viewport={{ once: false, amount: 0.1 }}
             >
-              <div className="bg-[#232323] rounded-xl min-h-36 py-4 px-2">
-                <h2 className="text-2xl text-white">
-                  <span>
-                    {etapa.id}
-                    <span className="text-4xl text-accent">.</span>{" "}
-                  </span>
-                  {etapa.title}
-                </h2>
-                <p className="text-gray-300">{etapa.content}</p>
-
-                <div className="flex flex-row gap-4 px-10 justify-center">
-                  {etapa.pdfLink && (
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() =>
-                        handleOpenWindow(
-                          etapa.pdfLink,
-                          "pdf",
-                          etapa.pdfTitle,
-                          etapa.pdfVersion
-                        )
-                      }
-                      className="flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#0aff9d] rounded-lg hover:bg-[#32de99]"
-                    >
-                      PDF
-                      <FaPlay className="mx-2" />
-                    </motion.button>
-                  )}
-                  {etapa.videoLink && (
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => handleOpenWindow(etapa.videoLink, "video")}
-                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#ff5959] rounded-lg hover:bg-[#ab3131]"
-                    >
-                      Video
-                      <FaPlay className="mx-2" />
-                    </motion.button>
-                  )}
-                  {
-                    etapa.slideLink && (
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => handleOpenWindow(etapa.slideLink, "pdf", etapa.slideTitle, etapa.slideVersion)}
-                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black/80 bg-[#ffd153] rounded-lg hover:bg-[#eec34c]"
-                      >
-                        Diapositivas
-                        <FaPlay className="mx-2" />
-                      </motion.button>
-                    )
-                  }
-                  {
-                    etapa.galleryLink && (
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => handleOpenWindow(etapa.galleryLink, "galery")}
-                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#9b58ff] rounded-lg hover:bg-[#8c4fe7]"
-                      >
-                        Galeria
-                        <FaPlay className="mx-2" />
-                      </motion.button>
-                    )
-                  }
-                </div>
-              </div>
-              {isWindowOpen && (
-                <Window section="Ver Contenido" onClose={handleCloseWindow}>
-                  {contentType === "pdf" && (
-                    <PDFViewer
-                      file={fileContent}
-                      name={pdfTitle}
-                      version={pdfVersion}
-                    />
-                  )}
-                  {contentType === "video" && (
-                    <YouTubeViewer videoUrl={fileContent} />
-                  )}
-                  {contentType === "galery" && (
-                    <div>
-                      <h3
-                        className="text-2xl text-white text-center font-bold pt-4"
-                      >Storyboard</h3>
-                      <div>
-                        <Gallery />
-                      </div>
+              <div className="bg-[#232323] rounded-xl min-h-48 py-4 px-4 flex flex-col sm:flex-row items-start gap-6">
+                {/* Sección de texto */}
+                <div className="flex flex-col justify-between px-4 sm:px-6 lg:px-12 w-full lg:w-4/5">
+                  <h2 className="text-2xl text-white font-extrabold text-center sm:text-left">
+                    <span>
+                      {etapa.id}
+                      <span className="text-4xl text-accent">.</span>{" "}
+                    </span>
+                    {etapa.title}
+                  </h2>
+                  <div className="flex flex-col gap-4 mt-4">
+                    <p className="text-gray-300 text-center sm:text-left">{etapa.content}</p>
+                    {/* Botones */}
+                    <div className="flex flex-wrap justify-center gap-4 px-6">
+                      {etapa.pdfLink && (
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() =>
+                            handleOpenWindow(etapa.pdfLink, "pdf", etapa.pdfTitle, etapa.pdfVersion)
+                          }
+                          className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#36a2d4] rounded-lg hover:bg-[#2981aa]"
+                        >
+                          <IoMdDocument className="mr-2" />
+                          Documento
+                          {/* <FaPlay className="ml-2" /> */}
+                        </motion.button>
+                      )}
+                      {etapa.videoLink && (
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => handleOpenWindow(etapa.videoLink, "video")}
+                          className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#ff5959] rounded-lg hover:bg-[#ab3131]"
+                        >
+                          <FaPlay className="mr-2" />
+                          Video
+                        </motion.button>
+                      )}
+                      {etapa.slideLink && (
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() =>
+                            handleOpenWindow(etapa.slideLink, "pdf", etapa.slideTitle, etapa.slideVersion)
+                          }
+                          className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#ffd153] rounded-lg hover:bg-[#eec34c]"
+                        >
+                          <LuPresentation className="mr-2" />
+                          Diapositivas
+                        </motion.button>
+                      )}
+                      {etapa.galleryLink && (
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => handleOpenWindow(etapa.galleryLink, "galery")}
+                          className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#9b58ff] rounded-lg hover:bg-[#8c4fe7]"
+                        >
+                          <FaImage className="mr-2" />
+                          Galería
+                        </motion.button>
+                      )}
                     </div>
-                  )}
-                </Window>
-              )}
+                  </div>
+                </div>
+                {/* Sección de imagen */}
+                <div className="flex items-center justify-center w-full h-48 sm:w-72 lg:w-1/5 bg-transparent rounded-2xl overflow-hidden">
+                  <img
+                    src={etapa.image}
+                    alt={etapa.title}
+                    className="w-72 h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+
+                {isWindowOpen && (
+                  <Window section="Ver Contenido" onClose={handleCloseWindow}>
+                    {contentType === "pdf" && (
+                      <PDFViewer
+                        file={fileContent}
+                        name={pdfTitle}
+                        version={pdfVersion}
+                      />
+                    )}
+                    {contentType === "video" && (
+                      <YouTubeViewer videoUrl={fileContent} />
+                    )}
+                    {contentType === "galery" && (
+                      <div>
+                        <h3
+                          className="text-2xl text-white text-center font-bold pt-4"
+                        >Storyboard</h3>
+                        <div>
+                          <Gallery />
+                        </div>
+                      </div>
+                    )}
+                  </Window>
+                )}
+              </div>
             </AnimationComponent>
           </div>
         ))}

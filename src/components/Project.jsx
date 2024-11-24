@@ -59,6 +59,7 @@ export const dataProject = [
     content: 'Es una técnica de representación gráfica de una historia o narración, que se utiliza para representar la secuencia de eventos de una historia.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
+    galleryLink: true,
     // slideLink: "/path/to/slides/storyboard.pptx", // Enlace a la presentación
     date: "Noviembre 4-21",
     image: "/path/to/image/book.png", // Cambia el path según tu proyecto

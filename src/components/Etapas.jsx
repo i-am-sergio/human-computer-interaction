@@ -102,11 +102,11 @@ export const Etapas = ({ dataEtapas }) => {
                     )
                   }
                   {
-                    etapa.galeryLink && (
+                    etapa.galleryLink && (
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        onClick={() => handleOpenWindow(etapa.galeryLink, "galery")}
+                        onClick={() => handleOpenWindow(etapa.galleryLink, "galery")}
                         className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#9b58ff] rounded-lg hover:bg-[#8c4fe7]"
                       >
                         Galeria

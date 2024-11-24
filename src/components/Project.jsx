@@ -36,9 +36,12 @@ export const dataProject = [
   {
     id: 1,
     title: 'Viabilidad',
-    content: 'Es la evaluación de la factibilidad de un proyecto, con el fin de determinar si es viable o no, y si es viable, cuál es la mejor manera de llevar',
+    content: 'Es la evaluación de la factibilidad de un proyecto, con el fin de determinar si es viable o no, y si es viable, cuál es la mejor manera de llevarlo a cabo.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
+    slideLink: "/human-computer-interaction/Proyecto_IHC_Etapa1_2.pdf",
+    date: "Octubre 14-18",
+    image: "/path/to/image/rocket.png", // Cambia el path según tu proyecto
   },
   {
     id: 2,
@@ -46,6 +49,9 @@ export const dataProject = [
     content: 'Es el proceso de identificar y definir las necesidades de los usuarios, con el fin de desarrollar soluciones que satisfagan sus necesidades y expectativas.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
+    // slideLink: "/path/to/slides/needfinding.pptx", // Enlace a la presentación
+    date: "Octubre 21-31",
+    image: "/path/to/image/person.png", // Cambia el path según tu proyecto
   },
   {
     id: 3,
@@ -53,7 +59,9 @@ export const dataProject = [
     content: 'Es una técnica de representación gráfica de una historia o narración, que se utiliza para representar la secuencia de eventos de una historia.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
-    galeryLink: true,
+    // slideLink: "/path/to/slides/storyboard.pptx", // Enlace a la presentación
+    date: "Noviembre 4-21",
+    image: "/path/to/image/book.png", // Cambia el path según tu proyecto
   },
   {
     id: 4,
@@ -61,13 +69,12 @@ export const dataProject = [
     content: 'Es el proceso de creación de un prototipo, que es una representación visual de un producto o sistema, que se utiliza para probar y validar la solución propuesta.',
     videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
     pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa1.pdf",
+    // slideLink: "/path/to/slides/prototipado.pptx", // Enlace a la presentación
+    date: "Diciembre 1-5",
+    image: "/path/to/image/rentacar.png", // Cambia el path según tu proyecto
   },
-  // {
-  //   id: 5,
-  //   title: 'Prototipado de Mediana Fidelidad',
-  //   content: 'Es el proceso de creación de un prototipo de alta fidelidad, que es una representación visual y funcional de un producto o sistema, que se utiliza para probar y validar la solución propuesta.'
-  // }
 ];
+
 
 export const Project = () => {
   const [activeWindow, setActiveWindow] = useState(null);

@@ -89,6 +89,19 @@ export const Etapas = ({ dataEtapas }) => {
                     </motion.button>
                   )}
                   {
+                    etapa.slideLink && (
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={() => handleOpenWindow(etapa.slideLink, "pdf", etapa.slideTitle, etapa.slideVersion)}
+                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black/80 bg-[#ffd153] rounded-lg hover:bg-[#eec34c]"
+                      >
+                        Diapositivas
+                        <FaPlay className="mx-2" />
+                      </motion.button>
+                    )
+                  }
+                  {
                     etapa.galeryLink && (
                       <motion.button
                         whileHover={{ scale: 1.1 }}

@@ -1,34 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Configura la animación de los cuadrados */
-@keyframes floatUp {
-  0% {
-    transform: translateY(100vh) scale(0.5); /* Comienza más abajo del viewport */
-    opacity: 0; /* Inicialmente oculto */
-  }
-  40% {
-    opacity: 1; /* Aparece en el 40% de la animación */
-  }
-  100% {
-    transform: translateY(-10vh) scale(1); /* Termina por encima del viewport */
-    opacity: 0; /* Desaparece al final de la animación */
-  }
-}
-
-.circle {
-  position: absolute;
-  width: 20px; /* Tamaño de los círculos */
-  height: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%; /* Convierte el cuadrado en un círculo */
-  animation: floatUp 6s ease-in infinite; /* Mantén la animación continua */
-  opacity: 0; /* Los círculos estarán ocultos hasta que empiecen a animarse */
-}
-
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -97,3 +66,61 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Declarar 2 colores como variables */
+:root {
+  --primary-color: #0aff9d;
+  --secondary-color: #535bf2;
+  --bg-color: #080808;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  /* font-family: "Space Grotesk", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  background-color: #000;
+  color: #fff;
+}
+
+.bg-img {
+  /* background-image: url("src/assets/bg-img5.png"); */
+  /* background-color: #0aff9d; */
+  background-color: var(--bg-color);
+}
+
+.h1{
+  @apply text-[48px] xl:text-[80px] leading-[1.1] font-bold;
+}
+
+.h2{
+  @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+}
+
+.h3{
+  @apply text-[20px] xl:text-[324px] leading-[1.1] font-semibold;
+}
+
+.text-accent{
+  color: var(--primary-color);
+}
+
+.border-accent{
+  border-color: var(--primary-color);
+}
+
+.bg-accent{
+  background-color: var(--primary-color);
+}

@@ -1,125 +1,126 @@
-import { useEffect, useState } from "react";
-import NavbarDropdown from "./NavbarDropDown";
-import "./Navbar.css";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa"; // Iconos para el menú móvil
 
-export default function Navbar( {project} ) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrollPos, setScrollPos] = useState(0);
-  const [selectedItem, setSelectedItem] = useState(null);
+const sections = [
+    { id: "inicio", label: "Inicio" },
+    { id: "nosotros", label: "Nosotros" },
+    { id: "proyecto", label: "Proyecto" },
+    { id: "videojuego", label: "Videojuego" },
+];
 
-  const handleOpen = () => setIsOpen((prev) => !prev);
+export const Navbar = () => {
+    const [activeSection, setActiveSection] = useState("");
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Estado para el menú móvil
+    const { scrollYProgress } = useScroll();
+    const scrollSpring = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
-  const handleScrollPos = () => {
-    const currentScrollPos = window.scrollY;
-    if (currentScrollPos > scrollPos) {
-      setIsOpen(false);
-    }
-    setScrollPos(currentScrollPos);
-  };
-
-  const handleItemClick = (item, path) => {
-    setSelectedItem(item);
-    setIsOpen(false);
-    const targetElement = document.querySelector(path);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScrollPos);
-    return () => {
-      window.removeEventListener("scroll", handleScrollPos);
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
-  }, [scrollPos]);
 
-  // Si project es diferente de null, sections = array de secciones del proyecto, caso contrario, sections = array de secciones del videojuego
-  let sections = [];
-  if (project) { // PROYECTO
-    sections = [
-      { name: "Viabilidad", path: "#viabilidad", number: 1 },
-      { name: "NeedFinding", path: "#needfinding", number: 2 },
-      { name: "Storyboarding", path: "#storyboarding", number: 3 },
-      // { name: "Prototipo de papel", path: "#prototipo-papel", number: 4 },
-      // { name: "Primer prototipo", path: "#primer-prototipo", number: 5 },
-      // { name: "Segundo prototipo", path: "#segundo-prototipo", number: 6 },
-    ];
-  } else { // VIDEOJUEGO
-    sections = [
-      { name: "Creacion de la idea", path: "#creacion-idea", number: 1 },
-      { name: "Sketching", path: "#sketching", number: 2 },
-      { name: "Storyboarding", path: "#storyboarding", number: 3 },
-      { name: "Prototipo de papel", path: "#prototipo-papel", number: 4 },
-      { name: "Primer prototipo", path: "#primer-prototipo", number: 5 },
-      { name: "Segundo prototipo", path: "#segundo-prototipo", number: 6 },
-    ];
-  }
-  
-  useEffect(() => {
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const section = sections.find((sec) => sec.path === `#${entry.target.id}`);
-          if (section) {
-            setSelectedItem(section.name);
-          }
+    const handleLinkClick = (e, id) => {
+        e.preventDefault();
+        const section = document.getElementById(id);
+        if (section) {
+            // Detecta si es mobile o desktop según el ancho de la pantalla
+            const isMobile = window.innerWidth <= 768; // Puedes ajustar el breakpoint según tus necesidades
+            const offset = isMobile ? -50 : 0; // Offset dinámico para mobile y desktop
+            const elementPosition = section.getBoundingClientRect().top;
+            const offsetPosition = window.scrollY + elementPosition + offset;
+    
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            });
         }
-      });
+        setIsMobileMenuOpen(false); // Cierra el menú móvil
     };
+    
 
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.6,
-    });
+    useEffect(() => {
+        const handleScroll = () => {
+            let sectionFound = false;
+            sections.forEach(({ id }) => {
+                const section = document.getElementById(id);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                        setActiveSection(id);
+                        sectionFound = true;
+                    }
+                }
+            });
+            if (!sectionFound) {
+                setActiveSection(""); // Limpia el estado si no hay sección activa
+            }
+        };
 
-    sections.forEach(({ path }) => {
-      const section = document.querySelector(path);
-      if (section) observer.observe(section);
-    });
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Inicializa el estado
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    // top-0 left-0
-    <nav className={`bg-emerald-300 transition-shadow duration-300 rounded-lg fixed pb-2 w-[20%] h-[85%] z-2 ${isOpen || scrollPos > 10 ? "shadow-lg" : ""}`}>
-      <div className="container mx-auto">
-        <div className="flex flex-col items-start p-5 space-y-6 bg-tertiary-300">
-          <div onClick={handleOpen} className={`flex flex-col items-center w-fit gap-[7px] cursor-pointer md:hidden z-20 transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}>
-            <span className={`transition-all duration-300 ease-in-out h-[2px] w-5 bg-black-500 rounded-full ${isOpen ? "bg-white" : ""}`}></span>
-            <span className={`transition-all duration-300 ease-in-out h-[2px] w-4 bg-black-500 rounded-full ${isOpen ? "bg-white" : ""}`}></span>
-            <span className={`transition-all duration-300 ease-in-out h-[2px] w-5 bg-black-500 rounded-full ${isOpen ? "bg-white" : ""}`}></span>
-          </div>
-
-          <div className="flex flex-col items-start w-full space-y-4 text-black-200 text-sm font-body">
-            {
-            sections.map(({ number, name, path }) => (
-              <div key={name} className="relative">
-                <a
-                  href={path}
-                  className={`relative navlink block py-2 px-4 w-full ${selectedItem === name ? "text-primary-100 font-bold italic" : "text-black-200"} transition-colors duration-300 ease-in-out font-sourgummy text-2xl`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleItemClick(name, path);
-                  }}
+    return (
+        <div>
+            {/* Navbar Desktop */}
+            <div className="hidden lg:flex fixed top-0 left-0 h-full w-16 flex-col items-center bg-[var(--bg-color)] py-4">
+                <motion.a
+                    href="#inicio"
+                    className="flex font-bold text-lg h-12 w-12 mb-6 text-center items-center justify-center rounded-xl"
                 >
-                  {number}. {name}
-                  <span
-                    className={`absolute left-0 bottom-[-5px] h-[2px] w-full bg-primary-100 transition-all duration-300 ${
-                      selectedItem === name ? "scale-x-100" : "scale-x-0"
-                    }`}
-                  />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
+                    IHC<span className="text-[#0aff9d]">.</span>
+                </motion.a>
 
-      </div>
-    </nav>
-  );
-}
+                {sections.map(({ id, label }) => {
+                    const isSelected = activeSection === id;
+                    return (
+                        <motion.button
+                            key={id}
+                            onClick={(e) => handleLinkClick(e, id)}
+                            className={`flex items-center justify-center text-center text-lg w-full px-4 py-4 h-[120px] font-light border-l-4 transition-all duration-300 ${
+                                isSelected
+                                    ? "text-[#0aff9d] border-[#0aff9d] bg-[#111111]"
+                                    : "text-[#dddddd] border-transparent"
+                            } hover:text-[#0aff9d] hover:border-[#0aff9d]`}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            style={{
+                                writingMode: "vertical-rl",
+                                transform: "rotate(180deg)",
+                            }}
+                        >
+                            {label}
+                        </motion.button>
+                    );
+                })}
+            </div>
+
+            {/* Navbar Mobile */}
+            <div className="lg:hidden fixed top-0 left-0 w-full bg-[var(--bg-color)] py-4 z-50">
+                <div className="flex items-center justify-between px-4">
+                    <a href="#inicio">
+                        <span className="font-bold text-lg">IHC<span className="text-[#0aff9d]">.</span></span>
+                    </a>
+                    <button className="focus:outline-none px-8" onClick={toggleMobileMenu}>
+                        {isMobileMenuOpen ? <FaTimes className="text-white w-6 h-6" /> : <FaBars className="text-white w-6 h-6" />}
+                    </button>
+                </div>
+                {isMobileMenuOpen && (
+                    <ul className="mt-4 flex flex-col gap-4 px-4">
+                        {sections.map(({ id, label }) => (
+                            <li key={id}>
+                                <a
+                                    href={`#${id}`}
+                                    onClick={(e) => handleLinkClick(e, id)}
+                                    className="block text-lg text-white hover:text-[#0aff9d] transition-colors"
+                                >
+                                    {label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+        </div>
+    );
+};

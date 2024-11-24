@@ -114,9 +114,22 @@ export const Etapas = ({ dataEtapas }) => {
                           className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#9b58ff] rounded-lg hover:bg-[#8c4fe7]"
                         >
                           <FaImage className="mr-2" />
-                          Galería
+                          Viñetas
                         </motion.button>
                       )}
+                      {
+                        etapa.explainLink && (
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => handleOpenWindow(etapa.explainLink, "video")}
+                            className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
+                          >
+                            <FaPlay className="mr-2" />
+                            Explicación
+                          </motion.button>
+                        )
+                      }
                     </div>
                   </div>
                 </div>

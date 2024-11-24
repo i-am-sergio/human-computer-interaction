@@ -63,6 +63,7 @@ export const YouTubeViewer = ({ videoUrl }) => {
           width="100%" // Se ajusta al contenedor
           height="100%" // Se ajusta al contenedor
           src={embedUrl} // Usa la URL adecuada según el tipo
+          loading="lazy" 
           style={{ border: 0 }}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

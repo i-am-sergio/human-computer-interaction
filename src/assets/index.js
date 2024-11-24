@@ -20,6 +20,7 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import csunsa from "./csunsa.png";
 
 import c from "./tech/c.png";
 import aframe from "./tech/aframe.png";
@@ -40,8 +41,18 @@ import email from "./email.svg";
 import youtube from "./youtube.svg";
 import instagram from "./instagram.svg";
 import playVideo from "./play.svg";
+import rocket from "./rocket.svg";
+import person from "./person.svg";
+import book from "./book.svg";
 
+import storyboarding2 from "./storyboarding.jpg";
+import needfinding from "./needfinding.jpg";
 export {
+  storyboarding2,
+  needfinding,
+  book,
+  person,
+  rocket,
   logo,
   backend,
   creator,
@@ -82,4 +93,5 @@ export {
   youtube,
   instagram,
   playVideo,
+  csunsa,
 };

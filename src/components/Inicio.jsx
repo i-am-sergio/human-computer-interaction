@@ -1,9 +1,9 @@
-import React from 'react'
-import { FiDownload } from 'react-icons/fi'
+import React from "react";
+import { FiDownload } from "react-icons/fi";
 import { FaArrowDown } from "react-icons/fa6";
-import { AnimatedButton } from './Button';
-import { AnimationComponent } from './atom/AnimationComponent';
-
+import { AnimatedButton } from "./Button";
+import { AnimationComponent } from "./atom/AnimationComponent";
+import robot from "../assets/robot.gif";
 
 export const Inicio = () => {
   return (
@@ -17,11 +17,16 @@ export const Inicio = () => {
             <AnimationComponent
               variants={{
                 hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { delay: 0.5, duration: 0.8 } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.5, duration: 0.8 },
+                },
               }}
             >
-              <span className="text-lg sm:text-xl block">Ciencia de la Computación</span>
-
+              <span className="text-lg sm:text-xl block">
+                Ciencia de la Computación
+              </span>
             </AnimationComponent>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold mb-6 leading-tight">
               {/* <Reveal width="85%">
@@ -39,11 +44,14 @@ export const Inicio = () => {
               <AnimationComponent
                 variants={{
                   hidden: { opacity: 0, x: 100 },
-                  visible: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 0.6 } },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { delay: 0.2, duration: 0.6 },
+                  },
                 }}
               >
                 <span className="text-accent">Computador.</span>
-
               </AnimationComponent>
             </h1>
             {/* <Reveal width="52%">
@@ -51,40 +59,45 @@ export const Inicio = () => {
             <AnimationComponent
               variants={{
                 hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.6 } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.4, duration: 0.6 },
+                },
               }}
             >
               <p className="text-sm sm:text-base lg:text-lg max-w-[500px] text-white/80">
                 Diseño Centrado en el Usuario | Interfaces Naturales
               </p>
-
             </AnimationComponent>
             {/* Btn */}
             <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 mt-9 px-20 sm:px-0">
               {/* <Reveal width="26%">
               </Reveal> */}
-              <AnimatedButton
-                href={"#videojuego"}
-              >
+              <AnimatedButton href={"#videojuego"}>
                 <span>Demo Videojuego</span>
                 <FaArrowDown className="text-xl" />
               </AnimatedButton>
               {/* <Reveal width="26%">
               </Reveal> */}
-              <AnimatedButton
-                href={"#proyecto"}
-              >
+              <AnimatedButton href={"#proyecto"}>
                 <span>Demo Proyecto</span>
                 <FaArrowDown className="text-xl" />
               </AnimatedButton>
             </div>
           </div>
+
           {/* Photo */}
-          {/* <div>
-            Photo
-          </div> */}
+          <div className="mt-8 xl:mt-0 w-full xl:w-1/2 flex justify-center overflow-hidden">
+            <img
+              src={robot}
+              alt="robot"
+              className="max-w-full h-auto rounded-lg shadow-lg"
+              style={{ clipPath: "inset(0 0 10% 0)" }}
+            />
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,70 +1,26 @@
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-// import { ComputersCanvas } from "./canvas";
+import React from 'react'
+import { HERO } from '../constants/'
+import carlImg from '../assets/carl.jpeg'
 
-const Hero = () => {
-    return (
-        <section className={`relative w-full h-screen mx-auto`}>
-            <div
-                className={`absolute inset-0 top-[240px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
-            >
-                <div className="flex flex-col justify-center items-center mt-5">
-                    <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
-                    <div className="w-1 sm:h-80 h-40 violet-gradient" />
-                </div>
-
-                <div style={{ zIndex: 1 }}>
-                    <h1 className={`${styles.heroHeadText} text-white`}>
-                        Interaccion{" "}
-                        <motion.span
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="text-[#915EFF]"
-                        >
-                            Humano-Computador
-                        </motion.span>
-                    </h1>
-                    <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-                    Ciencia de la Computacion | Diseño centrado en el usuario
-                    </p>
-                    <div className="flex sm:flex-row mt-7">
-                        <a
-                            href="https://github.com/i-am-sergio/human-computer-interaction"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mb-4 sm:mb-0 sm:mr-4 green-pink-gradient p-[2px] rounded-[10px] shadow-card"
-                        >
-                            <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95 hover:bg-[#42349a]">
-                                <strong>GitHub</strong>
-                            </button>
-                        </a>
-                        {/* <a
-                            href="https://www.linkedin.com/in/xlgabriel"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mb-4 sm:mb-0 sm:mr-4 green-pink-gradient p-[2px] rounded-[10px] shadow-card"
-                        >
-                            <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95">
-                                LinkedIn
-                            </button>
-                        </a> */}
-                        <a
-                            href="https://drive.google.com/file/d/1wNSo6dtOsfWeCJu854kqBztZDKI_ZjBZ/view?usp=sharing"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mb-4 sm:mb-0 sm:mr-4 green-pink-gradient p-[2px] rounded-[10px] shadow-card"
-                        >
-                            <button className="bg-[#151131] text-white px-4 py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-95 hover:bg-[#42349a]">
-                                <strong>Propuesta de Proyecto</strong>
-                            </button>
-                        </a>
-                    </div>
-                </div>
+export const Hero = () => {
+  return (
+    <section className='flex min-h-screen flex-wrap items-center'>
+        <div className='w-full md:w-1/2'>
+            <h2 className='my-8 p-2 text-4xl font-bold md:text-5xl lg:text-[7rem]'>
+                {HERO.name}
+            </h2>
+            <p className='p-2 text-3xl tracking-tighter lg:text-4xl'>
+                {HERO.greet}                
+            </p>
+            <p className='mb-8 p-2 text-xl'>
+                {HERO.description}
+            </p>
+        </div>
+        <div className='w-full md:w-1/2 lg:p-8'>
+            <div className='flex justify-center'>
+                <img src={carlImg} alt='Carl' width={250} height={250} className='rounded-full' />
             </div>
-            {/* <ComputersCanvas /> */}
-        </section>
-    );
-};
-
-export default Hero;
+        </div>
+    </section>
+  )
+}

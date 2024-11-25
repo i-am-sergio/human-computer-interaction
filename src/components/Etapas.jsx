@@ -14,11 +14,17 @@ export const Etapas = ({ dataEtapas }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
   const [fileContent, setFileContent] = useState(null);
   const [contentType, setContentType] = useState("");
+  const [images, setImages] = useState([]);
+  const [title, setTitle] = useState("");
   const [pdfTitle, setPdfTitle] = useState(""); // Título del PDF
   const [pdfVersion, setPdfVersion] = useState(""); // Versión del PDF
 
   // Función para abrir la ventana
   const handleOpenWindow = (file, type, title = "", version = "") => {
+    if (type === "galery") {
+      setImages(file);
+      setTitle(title);
+    }
     setFileContent(file);
     setContentType(type);
     if (type === "pdf") {
@@ -65,7 +71,9 @@ export const Etapas = ({ dataEtapas }) => {
                     {etapa.title}
                   </h2>
                   <div className="flex flex-col gap-4 mt-4">
-                    <p className="text-gray-300 text-center sm:text-left">{etapa.content}</p>
+                    <p className="text-gray-300 text-center sm:text-left">
+                      {etapa.content}
+                    </p>
                     {/* Botones */}
                     <div className="flex flex-wrap justify-center gap-4 px-6">
                       {etapa.pdfLink && (
@@ -73,7 +81,12 @@ export const Etapas = ({ dataEtapas }) => {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() =>
-                            handleOpenWindow(etapa.pdfLink, "pdf", etapa.pdfTitle, etapa.pdfVersion)
+                            handleOpenWindow(
+                              etapa.pdfLink,
+                              "pdf",
+                              etapa.pdfTitle,
+                              etapa.pdfVersion
+                            )
                           }
                           className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#36a2d4] rounded-lg hover:bg-[#2981aa]"
                         >
@@ -86,7 +99,9 @@ export const Etapas = ({ dataEtapas }) => {
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          onClick={() => handleOpenWindow(etapa.videoLink, "video")}
+                          onClick={() =>
+                            handleOpenWindow(etapa.videoLink, "video")
+                          }
                           className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#ff5959] rounded-lg hover:bg-[#ab3131]"
                         >
                           <FaPlay className="mr-2" />
@@ -98,7 +113,12 @@ export const Etapas = ({ dataEtapas }) => {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() =>
-                            handleOpenWindow(etapa.slideLink, "pdf", etapa.slideTitle, etapa.slideVersion)
+                            handleOpenWindow(
+                              etapa.slideLink,
+                              "pdf",
+                              etapa.slideTitle,
+                              etapa.slideVersion
+                            )
                           }
                           className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#ffd153] rounded-lg hover:bg-[#eec34c]"
                         >
@@ -106,30 +126,36 @@ export const Etapas = ({ dataEtapas }) => {
                           Diapositivas
                         </motion.button>
                       )}
-                      {etapa.galleryLink && (
+                      {etapa.gallery && (
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          onClick={() => handleOpenWindow(etapa.galleryLink, "galery")}
+                          onClick={() =>
+                            handleOpenWindow(
+                              etapa.gallery,
+                              "galery",
+                              etapa.title
+                            )
+                          }
                           className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#9b58ff] rounded-lg hover:bg-[#8c4fe7]"
                         >
                           <FaImage className="mr-2" />
                           Viñetas
                         </motion.button>
                       )}
-                      {
-                        etapa.explainLink && (
-                          <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={() => handleOpenWindow(etapa.explainLink, "video")}
-                            className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
-                          >
-                            <FaPlay className="mr-2" />
-                            Explicación
-                          </motion.button>
-                        )
-                      }
+                      {etapa.explainLink && (
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() =>
+                            handleOpenWindow(etapa.explainLink, "video")
+                          }
+                          className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
+                        >
+                          <FaPlay className="mr-2" />
+                          Explicación
+                        </motion.button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -156,11 +182,11 @@ export const Etapas = ({ dataEtapas }) => {
                     )}
                     {contentType === "galery" && (
                       <div>
-                        <h3
-                          className="text-2xl text-white text-center font-bold pt-4"
-                        >Storyboard</h3>
+                        <h3 className="text-2xl text-white text-center font-bold pt-4">
+                          {title}
+                        </h3>
                         <div>
-                          <Gallery />
+                          <Gallery photos={images} />
                         </div>
                       </div>
                     )}

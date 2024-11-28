@@ -42,7 +42,7 @@ export const Etapas = ({ dataEtapas }) => {
   return (
     <div className="flex h-[100%]">
       <div className="w-full bg-transparent h-[100%] rounded-lg overflow-auto scrollbar-thin scrollbar-thumb-[#0aff9d] scrollbar-track-transparent scrollbar-thumb-rounded-lg">
-        {dataEtapas?.map((etapa) => (
+        {dataEtapas?.map((etapa, ) => (
           <div
             key={etapa.id}
             className="bg-[#111111] flex flex-col gap-4 pr-6 py-4 pl-4"
@@ -53,7 +53,7 @@ export const Etapas = ({ dataEtapas }) => {
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { delay: 0.15, duration: 0.3 },
+                  transition: { delay: 0.15*etapa.id, duration: 0.3 },
                 },
               }}
               initial="hidden"
@@ -164,7 +164,7 @@ export const Etapas = ({ dataEtapas }) => {
                   <img
                     src={etapa.image}
                     alt={etapa.title}
-                    className="w-72 h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-110"
+                    className="w-72 h-48 object-cover rounded-lg transition-transform duration-300"
                   />
                 </div>
 

@@ -67,7 +67,7 @@ export const Inicio = () => {
               }}
             >
               <p className="text-sm sm:text-base lg:text-lg max-w-[500px] text-white/80">
-                Diseño Centrado en el Usuario | Interfaces Naturales
+                Diseño Centrado en el Usuario • Interfaces Naturales
               </p>
             </AnimationComponent>
             {/* Btn */}

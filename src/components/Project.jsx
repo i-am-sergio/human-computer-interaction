@@ -8,7 +8,7 @@ import { AnimationComponent } from "./atom/AnimationComponent";
 import { Etapas } from "./Etapas";
 import { Window } from "./Window";
 
-import viabilidad from "../assets/project/viabilidad.webp";
+import viabilidad from "../assets/project/LogoAR.png";
 import needfinding from "../assets/project/needfinding.jpg";
 import storyboard from "../assets/project/storyboarding_p.jpg";
 import paperPrototype from "../assets/project/paper_prototype.png";

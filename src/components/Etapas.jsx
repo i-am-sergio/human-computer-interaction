@@ -7,8 +7,8 @@ import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Gallery } from "./atom/Gallery";
 import { IoMdDocument } from "react-icons/io";
-import { LuPresentation } from "react-icons/lu";
 import { FaImage } from "react-icons/fa6";
+import { PiPresentationFill } from "react-icons/pi";
 
 export const Etapas = ({ dataEtapas }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
@@ -88,24 +88,11 @@ export const Etapas = ({ dataEtapas }) => {
                               etapa.pdfVersion
                             )
                           }
-                          className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#36a2d4] rounded-lg hover:bg-[#2981aa]"
+                          className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
                           <IoMdDocument className="mr-2" />
                           Documento
                           {/* <FaPlay className="ml-2" /> */}
-                        </motion.button>
-                      )}
-                      {etapa.videoLink && (
-                        <motion.button
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          onClick={() =>
-                            handleOpenWindow(etapa.videoLink, "video")
-                          }
-                          className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#ff5959] rounded-lg hover:bg-[#ab3131]"
-                        >
-                          <FaPlay className="mr-2" />
-                          Video
                         </motion.button>
                       )}
                       {etapa.slideLink && (
@@ -120,12 +107,26 @@ export const Etapas = ({ dataEtapas }) => {
                               etapa.slideVersion
                             )
                           }
-                          className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#ffd153] rounded-lg hover:bg-[#eec34c]"
+                          className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
-                          <LuPresentation className="mr-2" />
+                          <PiPresentationFill className="mr-2" />
                           Diapositivas
                         </motion.button>
                       )}
+                      {etapa.videoLink && (
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() =>
+                            handleOpenWindow(etapa.videoLink, "video")
+                          }
+                          className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
+                        >
+                          <FaPlay className="mr-2" />
+                          Video
+                        </motion.button>
+                      )}
+                      
                       {etapa.gallery && (
                         <motion.button
                           whileHover={{ scale: 1.1 }}
@@ -137,7 +138,7 @@ export const Etapas = ({ dataEtapas }) => {
                               etapa.title
                             )
                           }
-                          className="flex items-center px-4 py-2 text-sm font-medium text-white bg-[#9b58ff] rounded-lg hover:bg-[#8c4fe7]"
+                          className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
                           <FaImage className="mr-2" />
                           Viñetas

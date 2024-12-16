@@ -131,8 +131,7 @@ export const dataVideogame = [
     title: "Segundo Prototipo",
     content:
       "Es el proceso de creación de un prototipo de alta fidelidad, que es una representación visual y funcional de un producto o sistema, que se utiliza para probar y validar la solución propuesta.",
-    videoLink:
-      "https://www.youtube.com/embed/vo-N-Kfw87s?si=Hu7TQ6f489MTYP0Q",
+    videoLink: "https://www.youtube.com/embed/vo-N-Kfw87s?si=Hu7TQ6f489MTYP0Q",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
     date: "Oct 13 - Oct 19",
     image: prototipo2,
@@ -223,7 +222,9 @@ export const Videogame = () => {
           }}
         >
           <AnimatedButton onClick={() => handleOpenWindow("Proyecto Final")}>
-            <span className="text-sm px-8 sm:px-10 text-center">Proceso</span>
+            <span className="text-sm px-8 sm:px-10 text-center">
+              Ver Proceso
+            </span>
             <FaExpandAlt className="text-xl" />
           </AnimatedButton>
         </AnimationComponent>

@@ -13,6 +13,7 @@ import { PiPresentationFill } from "react-icons/pi";
 export const Etapas = ({ dataEtapas }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
   const [fileContent, setFileContent] = useState(null);
+  const [contentTitleType, setContentTitleType] = useState("");
   const [contentType, setContentType] = useState("");
   const [images, setImages] = useState([]);
   const [title, setTitle] = useState("");
@@ -20,13 +21,20 @@ export const Etapas = ({ dataEtapas }) => {
   const [pdfVersion, setPdfVersion] = useState(""); // Versión del PDF
 
   // Función para abrir la ventana
-  const handleOpenWindow = (file, type, title = "", version = "") => {
+  const handleOpenWindow = (
+    file,
+    type,
+    content = "",
+    title = "",
+    version = ""
+  ) => {
     if (type === "galery") {
       setImages(file);
       setTitle(title);
     }
     setFileContent(file);
     setContentType(type);
+    setContentTitleType(content);
     if (type === "pdf") {
       setPdfTitle(title);
       setPdfVersion(version);
@@ -42,7 +50,7 @@ export const Etapas = ({ dataEtapas }) => {
   return (
     <div className="flex h-[100%]">
       <div className="w-full bg-transparent h-[100%] rounded-lg overflow-auto scrollbar-thin scrollbar-thumb-[#0aff9d] scrollbar-track-transparent scrollbar-thumb-rounded-lg">
-        {dataEtapas?.map((etapa, ) => (
+        {dataEtapas?.map((etapa) => (
           <div
             key={etapa.id}
             className="bg-[#111111] flex flex-col gap-4 pr-6 py-4 pl-4"
@@ -53,7 +61,7 @@ export const Etapas = ({ dataEtapas }) => {
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { delay: 0.15*etapa.id, duration: 0.3 },
+                  transition: { delay: 0.15 * etapa.id, duration: 0.3 },
                 },
               }}
               initial="hidden"
@@ -84,6 +92,7 @@ export const Etapas = ({ dataEtapas }) => {
                             handleOpenWindow(
                               etapa.pdfLink,
                               "pdf",
+                              etapa.title + ": Documento",
                               etapa.pdfTitle,
                               etapa.pdfVersion
                             )
@@ -91,7 +100,7 @@ export const Etapas = ({ dataEtapas }) => {
                           className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
                           <IoMdDocument className="mr-2" />
-                          Documento
+                          Ver Documento
                           {/* <FaPlay className="ml-2" /> */}
                         </motion.button>
                       )}
@@ -103,6 +112,7 @@ export const Etapas = ({ dataEtapas }) => {
                             handleOpenWindow(
                               etapa.slideLink,
                               "pdf",
+                              etapa.title + ": Diapositivas",
                               etapa.slideTitle,
                               etapa.slideVersion
                             )
@@ -110,7 +120,7 @@ export const Etapas = ({ dataEtapas }) => {
                           className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
                           <PiPresentationFill className="mr-2" />
-                          Diapositivas
+                          Ver Diapositivas
                         </motion.button>
                       )}
                       {etapa.videoLink && (
@@ -118,15 +128,19 @@ export const Etapas = ({ dataEtapas }) => {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() =>
-                            handleOpenWindow(etapa.videoLink, "video")
+                            handleOpenWindow(
+                              etapa.videoLink,
+                              "video",
+                              etapa.title + ": Video"
+                            )
                           }
                           className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
                           <FaPlay className="mr-2" />
-                          Video
+                          Ver Video
                         </motion.button>
                       )}
-                      
+
                       {etapa.gallery && (
                         <motion.button
                           whileHover={{ scale: 1.1 }}
@@ -135,13 +149,14 @@ export const Etapas = ({ dataEtapas }) => {
                             handleOpenWindow(
                               etapa.gallery,
                               "galery",
+                              etapa.title + ": Viñetas",
                               etapa.title
                             )
                           }
                           className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
                           <FaImage className="mr-2" />
-                          Viñetas
+                          Ver Viñetas
                         </motion.button>
                       )}
                       {etapa.explainLink && (
@@ -149,12 +164,16 @@ export const Etapas = ({ dataEtapas }) => {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() =>
-                            handleOpenWindow(etapa.explainLink, "video")
+                            handleOpenWindow(
+                              etapa.explainLink,
+                              "video",
+                              etapa.title + ": Explicación"
+                            )
                           }
                           className="flex items-center px-4 py-2 text-sm font-medium text-black bg-[#0aff9d] rounded-lg hover:bg-[#3be29f]"
                         >
                           <FaPlay className="mr-2" />
-                          Explicación
+                          Ver Explicación
                         </motion.button>
                       )}
                     </div>
@@ -170,7 +189,10 @@ export const Etapas = ({ dataEtapas }) => {
                 </div>
 
                 {isWindowOpen && (
-                  <Window section="Ver Contenido" onClose={handleCloseWindow}>
+                  <Window
+                    section={contentTitleType}
+                    onClose={handleCloseWindow}
+                  >
                     {contentType === "pdf" && (
                       <PDFViewer
                         file={fileContent}
@@ -183,9 +205,6 @@ export const Etapas = ({ dataEtapas }) => {
                     )}
                     {contentType === "galery" && (
                       <div>
-                        <h3 className="text-2xl text-white text-center font-bold pt-4">
-                          {title}
-                        </h3>
                         <div>
                           <Gallery photos={images} />
                         </div>

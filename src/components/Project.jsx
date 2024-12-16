@@ -205,7 +205,9 @@ export const Project = () => {
           }}
         >
           <AnimatedButton onClick={() => handleOpenWindow("Proyecto Final")}>
-            <span className="text-sm px-8 sm:px-10 text-center">Proceso</span>
+            <span className="text-sm px-8 sm:px-10 text-center">
+              Ver Proceso
+            </span>
             <FaExpandAlt className="text-xl" />
           </AnimatedButton>
         </AnimationComponent>

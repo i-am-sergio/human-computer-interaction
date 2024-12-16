@@ -67,21 +67,21 @@ export const Inicio = () => {
               }}
             >
               <p className="text-sm sm:text-base lg:text-lg max-w-[500px] text-white/80">
-                Diseño Centrado en el Usuario | Interfaces Naturales
+                Diseño Centrado en el Usuario • Interfaces Naturales
               </p>
             </AnimationComponent>
             {/* Btn */}
             <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 mt-9 px-20 sm:px-0">
               {/* <Reveal width="26%">
               </Reveal> */}
-              <AnimatedButton href={"#videojuego"}>
-                <span>Demo Videojuego</span>
-                <FaArrowDown className="text-xl" />
-              </AnimatedButton>
               {/* <Reveal width="26%">
               </Reveal> */}
               <AnimatedButton href={"#proyecto"}>
-                <span>Demo Proyecto</span>
+                <span>Ver Proyecto</span>
+                <FaArrowDown className="text-xl" />
+              </AnimatedButton>
+              <AnimatedButton href={"#videojuego"}>
+                <span>Ver Videojuego</span>
                 <FaArrowDown className="text-xl" />
               </AnimatedButton>
             </div>

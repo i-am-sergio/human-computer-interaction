@@ -53,21 +53,21 @@ const dataFeatures = [
     title: "Contexto y Motivacion",
     logo: <FaLightbulb className="text-accent w-6 h-6" />,
     content:
-      "Los métodos de Aprendizaje de Idiomas Asistido por Dispositivos Móviles (MALL) ofrecen una experiencia educativa única que permite a los estudiantes aprender de manera flexible, adaptándose a su disponibilidad de tiempo y ubicación.",
+      "En un futuro donde la exploración espacial es una realidad, un astronauta sufre un accidente que lo deja varado en un planeta desconocido. Rodeado de un entorno hostil, su supervivencia depende de su ingenio para explorar el terreno, superar obstáculos y encontrar las piezas necesarias para reparar su nave. ",
   },
   {
     id: 2,
     title: "Problema",
     logo: <FaLightbulb className="text-accent w-6 h-6" />,
     content:
-      "El diseño actual de interfaces de usuario para aplicaciones de aprendizaje de vocabulario en inglés limita la interacción del usuario y la comprensión contextual de las palabras, lo que reduce la motivación y la retención del conocimiento.",
+      "El astronauta está varado en un planeta desconocido y hostil, donde el oxígeno es limitado y el entorno está lleno de peligros mortales, como climas extremos y criaturas hostiles que custodian las piezas de la nave. Debes explorar este mundo extraño y recuperar las piezas necesarias antes de que sea demasiado tarde.",
   },
   {
     id: 3,
     title: "Objetivo del Proyecto",
     logo: <FaLightbulb className="text-accent w-6 h-6" />,
     content:
-      "Rediseñar la experiencia de aprendizaje del vocabulario en inglés, con el fin de aumentar la motivación para el aprendizaje, reducir la carga cognitiva de los usuarios y facilitar la comprensión contextual de las palabras.",
+      "Diseñar y desarrollar una experiencia de Realidad Virtual inmersiva a traves de interfaces naturales que permita a los jugadores asumir el rol del astronauta y explorar el planeta para localizar y recolectar las piezas necesarias para reparar su nave.",
   },
 ];
 
@@ -131,8 +131,7 @@ export const dataVideogame = [
     title: "Segundo Prototipo",
     content:
       "Es el proceso de creación de un prototipo de alta fidelidad, que es una representación visual y funcional de un producto o sistema, que se utiliza para probar y validar la solución propuesta.",
-    videoLink:
-      "https://www.youtube.com/playlist?list=PL4HmEAMGQ2e4NNFS-Q3RsE7Sp7ZAt5wT9",
+    videoLink: "https://www.youtube.com/embed/vo-N-Kfw87s?si=Hu7TQ6f489MTYP0Q",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
     date: "Oct 13 - Oct 19",
     image: prototipo2,
@@ -223,7 +222,9 @@ export const Videogame = () => {
           }}
         >
           <AnimatedButton onClick={() => handleOpenWindow("Proyecto Final")}>
-            <span className="text-sm px-8 sm:px-10 text-center">Proceso</span>
+            <span className="text-sm px-8 sm:px-10 text-center">
+              Ver Proceso
+            </span>
             <FaExpandAlt className="text-xl" />
           </AnimatedButton>
         </AnimationComponent>

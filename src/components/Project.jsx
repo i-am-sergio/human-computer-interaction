@@ -12,6 +12,8 @@ import viabilidad from "../assets/project/LogoAR.png";
 import needfinding from "../assets/project/needfinding.jpg";
 import storyboard from "../assets/project/storyboarding_p.jpg";
 import paperPrototype from "../assets/project/paper_prototype.png";
+import personaPrototype from "../assets/project/persona_prototype.png";
+import finalPrototype from "../assets/project/final_prototype.jpg";
 
 import p1 from "../assets/Papelotes_parte1/Papelote1_part1.png";
 import p2 from "../assets/Papelotes_parte1/Papelote1_part2.png";
@@ -129,6 +131,28 @@ export const dataProject = [
     // slideLink: "/path/to/slides/prototipado.pptx", // Enlace a la presentación
     date: "Diciembre 1-5",
     image: paperPrototype,
+  },
+  {
+    id: 5,
+    title: "Definición de Personas",
+    content:
+      "Es el proceso de identificar y definir los perfiles de los usuarios, con el fin de comprender sus necesidades, expectativas y comportamientos.",
+    //videoLink: "https://www.youtube.com/watch?v=_wNAw4cHoIA",
+    pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa3.pdf",
+    slideLink: "/human-computer-interaction/Proyecto_IHC_Etapa5_1.pdf",
+    date: "Diciembre 9-13",
+    image: personaPrototype,
+  },
+  {
+    id: 6,
+    title: "Prototipo de Alto Nivel",
+    content:
+      "Este diseño fue creado con base en los objetivos previamente analizados y evaluado con los distintos perfiles de usuario definidos para asegurar que cumpla con sus necesidades y expectativas.",
+    videoLink: "https://www.youtube.com/watch?v=xeQrV4RhDWM",
+    pdfLink: "/human-computer-interaction/Proyecto_IHC_Etapa3.pdf",
+    slideLink: "/human-computer-interaction/Proyecto_IHC_Etapa6_1.pdf",
+    date: "Diciembre 16-18",
+    image: finalPrototype,
   },
 ];
 

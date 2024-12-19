@@ -138,11 +138,11 @@ export const dataVideogame = [
   },
   {
     id: 7,
-    title: "Tercer Prototipo",
+    title: "Version Final del Videojuego",
     content:
-      "Es el proceso de revisión y mejora de un diseño, con el fin de corregir errores y optimizar la solución propuesta.",
-    videoLink:
-      "https://www.youtube.com/playlist?list=PL4HmEAMGQ2e4NNFS-Q3RsE7Sp7ZAt5wT9",
+      "Es la vrsion final del videojuego, con un analisis con usuario logrando el objetivo propuesto.",
+    videoLink: "https://www.youtube.com/watch?v=76FRGQJRg6E",
+    explainLink: "https://www.youtube.com/watch?v=Eo_HeKi6NXc",
     // pdfLink: "/Proyecto_IHC_Etapa1.pdf",
     date: "Oct 20 - Oct 26",
     image: prototipo3,
